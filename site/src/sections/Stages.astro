@@ -1,0 +1,42 @@
+---
+import { langOf, useText } from '../i18n';
+import Tile from '../components/Tile.astro';
+
+/** What the law asks at each product stage. `hot` marks the stage that applies at any time; `wide` stages have one long cell. */
+const { t, get, html } = useText(langOf(Astro.url));
+const STAGES = [
+  { id: 'prototype' },
+  { id: 'closedBeta' },
+  { id: 'openBeta' },
+  { id: 'sensitive', hot: true },
+  { id: 'paid' },
+  { id: 'b2b', wide: true },
+  { id: 'growth', wide: true },
+] as const;
+type Stage = { title: string; who: string; cells: string[] };
+const stages = get<Record<string, Stage>>('stages.items');
+---
+<Tile span={12} id="when" title={t('stages.title')}>
+  <p class="muted lead" set:html={t('stages.lead')} />
+  <ol class="stages">
+    {STAGES.map((s) => (
+      <li class:list={['stage', { hot: 'hot' in s, wide: 'wide' in s }]}>
+        <div class="sh"><h4>{stages[s.id].title}</h4><p class="who">{stages[s.id].who}</p></div>
+        {stages[s.id].cells.map((cell) => <div set:html={html(cell)} />)}
+      </li>
+    ))}
+  </ol>
+  <p class="muted" set:html={t('stages.example')} />
+</Tile>
+
+<style is:global>
+  .stages{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+  .stage{display:grid;grid-template-columns:minmax(0,1fr) repeat(3,minmax(0,1.3fr));gap:16px;padding:12px 16px;border:1px solid var(--rule);border-radius:10px;font-size:.87rem;align-items:start;margin:0}
+  .stage h4{font-size:.86rem;margin:0}
+  .stage .who{margin:2px 0 0;color:var(--ink-3);font-size:.78rem}
+  .stage>div b{display:block;font-size:.76rem;color:var(--ink-3);font-weight:600;margin-bottom:2px}
+  .stage.wide>div:not(.sh){grid-column:2/-1}
+  .stage.hot{background:var(--bad-soft);border-color:transparent}
+  @media (max-width:900px){.stage{grid-template-columns:repeat(2,minmax(0,1fr))}.stage>.sh,.stage.wide>div:not(.sh){grid-column:1/-1}}
+  @media (max-width:560px){.stage{grid-template-columns:minmax(0,1fr);gap:8px}}
+</style>

@@ -1,0 +1,13 @@
+---
+import { LANGS, LANG_META, langOf, pageHref, useText } from '../i18n';
+import { fontsFor } from '../assets/fonts';
+const lang = langOf(Astro.url);
+const { get } = useText(lang);
+---
+<nav class="seg" aria-label={get('header.language')} data-later-fonts={JSON.stringify(fontsFor(lang).later)}>
+  {LANGS.map((l) => (
+    <a href={pageHref(l)} hreflang={l} lang={l} data-lang-link aria-current={l === lang ? 'page' : undefined}>
+      {LANG_META[l].label}
+    </a>
+  ))}
+</nav>

@@ -1,0 +1,18 @@
+---
+import { langOf, useText } from '../i18n';
+import Tile from '../components/Tile.astro';
+
+const { t, get, html } = useText(langOf(Astro.url));
+const COLUMNS = ['what', 'when', 'cost'] as const;
+---
+<Tile span={12} id="rep" title={t('representative.title')}>
+  <div class="three">
+    {COLUMNS.map((col) => (
+      <div>
+        <h4>{get(`representative.${col}.title`)}</h4>
+        {get<string[]>(`representative.${col}.items`).map((item) => <p set:html={html(item)} />)}
+      </div>
+    ))}
+  </div>
+  <p class="src" set:html={t('representative.sources')} />
+</Tile>

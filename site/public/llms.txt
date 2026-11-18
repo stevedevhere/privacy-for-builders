@@ -1,0 +1,51 @@
+# GDPR in practice: cost, checks, fines
+
+> A reference page on personal data protection for developers and small products: GDPR, Swiss nFADP, UK GDPR and the laws of other countries. State as of 17.11.2026. Every important statement carries a badge: "data" means it is stated in a source, "inference" means it follows from the sources but is not stated outright. Every badge links to its own source so the statement can be re-checked. This is an explanation of the law, not legal advice.
+
+## Languages
+
+- https://privacy.stevedevhere.com/ — English (main)
+- https://privacy.stevedevhere.com/fr — French
+- https://privacy.stevedevhere.com/uk — Ukrainian
+- https://privacy.stevedevhere.com/ru — Russian
+
+## Sections
+
+The page is split into tabs (#main, #data, #start, #laws, #money, #tools), but the text of every tab is in the HTML. An anchor of any block opens its tab.
+
+- #when — when to start on privacy: prototype, closed beta, open beta, sensitive data, paid product, B2B, growth or incident. GDPR has no threshold by number of users.
+- #badge — the "GDPR compliant" badge: there is no official logo; Art. 42 certificates are voluntary and narrow.
+- #cats — data categories and what each needs: ordinary, special (Art. 9), indirectly sensitive (EU Court case law), children (Art. 8), profiling, pseudonymous and anonymous.
+- #example — an example breakdown of a couples test app.
+- #map — which data law applies in each of 186 countries and territories (30 GDPR, 11 with an EU adequacy decision, 110 with their own general law, 2 US, 12 draft or sectoral rules only, 21 with no general law found), with short and detailed differences from GDPR for the EU and 29 key countries. The map and its data load when the tab opens.
+- #prices — yearly costs: external DPO, EU representative, overall.
+- #risks, #checks, #cases, #who, #stats — consequences of mistakes, how checks and complaints work, examples of small fines, CMS statistics as of 1.03.2026.
+- #outside — a team or company outside the EU: adequacy decisions, SCCs; country specifics are on the map.
+- #rep — the EU representative under Art. 27: what it is, when you need one, prices (about €490–4,750 a year), the first fine for not having one (€525,000, the Netherlands, 2021).
+- #skills — open skills for AI agents (Claude Code, Codex, Gemini CLI, GitHub Copilot, Cursor) that apply this logic to a product's code: https://github.com/stevedevhere/privacy-for-builders
+- #sources — every source on the page in one list.
+
+## How to re-check a statement
+
+- In the HTML a badge is `<a class="tag d|i" href="URL">`: d = data, i = inference; href is the source for that exact statement.
+- In the JSON the URL sits inside the tag: `[data URL]`, `[inference URL]`, `[baseline 2026-11-17 URL]` (labels are translated in the other languages). "baseline" means the line was checked against that source on 17.11.2026.
+- The full list of sources: the #sources block in the footer and the `citation` field of the JSON-LD.
+- Law texts: GDPR https://eur-lex.europa.eu/eli/reg/2016/679/oj (per article: https://gdpr-info.eu/art-N-gdpr/), nFADP https://www.fedlex.admin.ch/eli/cc/2022/491/en, country overviews https://www.dlapiperdataprotection.com/?c=ISO&t=law.
+
+## Data
+
+- [laws.json](laws.json) (English), [laws.fr.json](laws.fr.json), [laws.uk.json](laws.uk.json), [laws.ru.json](laws.ru.json): `cls` — law classes; `countries` — country → {n: name in the file's language, en, c: class (g = GDPR, a = own law + EU adequacy, l = own law, u = US, p = draft or sectoral rules, n = no general law), law, y: year of the version, info: key of the detailed note, iso}; `info` — notes {t: title, s: short, d: detailed, reg: regulator}. `law` and the notes carry the same source tags as the page.
+- The world map is one SVG for all languages, and a time zone → country table preselects a country on the device; both are page assets with a content hash in the file name. Shape keys (`data-k`) are the country keys in the JSON.
+- Classification source: the World Privacy Forum table (June 2024) as republished by Captain Compliance, and the European Commission's adequacy list. On 17.11.2026 Brazil's adequacy decision (26.01.2026), 13 more countries and territories where a law was adopted or found since 2024, Chile, Vietnam, Mexico and all country notes were checked against sources; the corrected entries carry a source link. Other draft/no-law entries keep the June 2024 classification.
+
+## Source code
+
+The site is built with Astro from https://github.com/stevedevhere/privacy-for-builders/tree/main/site: page text in `src/i18n/<lang>.json`, country data in `src/data/laws/<lang>.json`.
+
+## License
+
+Texts and data: CC BY 4.0. Skills and code: MIT. Fonts: SIL OFL 1.1.
+
+## Author
+
+https://stevedevhere.com

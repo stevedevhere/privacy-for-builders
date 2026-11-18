@@ -1,0 +1,26 @@
+---
+/** Pill link-button. ink and ghost sit on the page, mark and line on the dark showcase tile. */
+interface Props {
+  href: string;
+  variant: 'ink' | 'ghost' | 'mark' | 'line';
+}
+const { href, variant } = Astro.props;
+---
+<a class:list={['btn', variant]} href={href}><slot /></a>
+
+<style is:global>
+  /* hover: a soft band of --sweep passes once across the background, which settles on a slightly lighter --rest */
+  .btn{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;
+    background:linear-gradient(110deg,var(--rest) 38%,var(--sweep) 50%,var(--base) 62%) 100% 0/260% 100% no-repeat;
+    transition:background-position .7s cubic-bezier(.4,0,.2,1),border-color .25s ease}
+  .btn:hover,.btn:focus-visible{background-position:0 0}
+  .btn.ink{color:var(--paper);--base:var(--ink);--rest:color-mix(in oklab,var(--ink) 86%,var(--accent));--sweep:var(--accent)}
+  .btn.ghost{color:var(--ink);border:1px solid var(--rule);--base:var(--sheet);--rest:var(--accent-soft);--sweep:color-mix(in oklab,var(--accent-soft) 55%,var(--accent))}
+  .btn.ghost:hover{border-color:var(--accent)}
+  .btn.mark{min-height:44px;padding:0 20px;font-size:.92rem;color:#172033;--base:#FFE15C;--rest:#FFEA85;--sweep:#FFF6CC}
+  .btn.line{min-height:44px;padding:0 20px;font-size:.92rem;color:#EEF1F5;border:1px solid rgba(238,241,245,.35);--base:transparent;--rest:rgba(238,241,245,.1);--sweep:rgba(238,241,245,.24)}
+  .btn.line:hover{border-color:#EEF1F5}
+  @media (prefers-reduced-motion:reduce){
+    .btn{transition:none}
+  }
+</style>

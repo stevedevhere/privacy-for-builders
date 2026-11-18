@@ -1,0 +1,68 @@
+---
+import { langOf, useText } from '../i18n';
+import Tile from '../components/Tile.astro';
+
+/** Yearly costs in euros on a log scale from 100 to 100 000. `total` bars combine several items and are drawn in grey. */
+const lang = langOf(Astro.url);
+const { t, get, html } = useText(lang);
+const RANGES = [
+  { min: 400, max: 1800 },
+  { min: 1500, max: 4200 },
+  { min: 4200, max: 10800 },
+  { min: 490, max: 4750, link: '#rep' },
+  { min: 5000, max: 15000, total: true },
+  { min: 3000, max: 10000, total: true },
+  { min: 15000, max: 40000, total: true },
+];
+const SCALE = { from: 100, to: 100_000 };
+const position = (value: number) => (Math.log10(value / SCALE.from) / Math.log10(SCALE.to / SCALE.from)) * 100;
+const TICKS = [100, 1_000, 10_000, 100_000];
+const number = new Intl.NumberFormat(lang);
+const euros = new Intl.NumberFormat(lang, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+const labels = get<{ title: string; note?: string }[]>('prices.ranges');
+---
+<Tile span={8} id="prices" title={t('prices.title')}>
+  <p class="muted lead" set:html={t('prices.lead')} />
+  <div class="ranges">
+    {RANGES.map((r, i) => (
+      <div class="rg">
+        <div class="lab">
+          {r.link ? <a href={r.link}>{labels[i].title}</a> : labels[i].title}
+          {labels[i].note && <span>{labels[i].note}</span>}
+        </div>
+        <div class:list={['track', { total: r.total }]}>
+          <i style={`left:${position(r.min).toFixed(1)}%;width:${(position(r.max) - position(r.min)).toFixed(1)}%`}></i>
+        </div>
+        <div class="val">{number.format(r.min)}–{number.format(r.max)}</div>
+      </div>
+    ))}
+    <div class="axis" aria-hidden="true">
+      <div></div>
+      <div class="ticks">{TICKS.map((v) => <span style={`left:${position(v)}%`}>{euros.format(v)}</span>)}</div>
+      <div></div>
+    </div>
+  </div>
+  <div class="side">{get<string[]>('prices.side').map((s) => <div set:html={html(s)} />)}</div>
+  <p class="src" set:html={t('prices.sources')} />
+</Tile>
+
+<style is:global>
+  .ranges{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .rg,.axis{display:grid;grid-template-columns:minmax(130px,200px) 1fr 104px;gap:12px;align-items:center}
+  .rg .lab{font-size:.86rem;line-height:1.25}
+  .rg .lab a{color:inherit}
+  .rg .lab span{display:block;color:var(--ink-3);font-size:.76rem}
+  .rg .val{font-size:.8rem;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+  .track{position:relative;height:18px;background:linear-gradient(to right,var(--rule) 1px,transparent 1px) 0 0/33.333% 100%;border-right:1px solid var(--rule)}
+  .track i{position:absolute;top:4px;height:10px;background:var(--accent);border-radius:4px}
+  .track.total i{background:var(--ink-3)}
+  .axis{font-size:.72rem;color:var(--ink-3)}
+  .axis .ticks{position:relative;height:1.2em}
+  .axis .ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+  .axis .ticks span:first-child{transform:none}
+  .axis .ticks span:last-child{transform:translateX(-100%)}
+  .side{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin-top:14px}
+  .side div{background:var(--paper);border-radius:8px;padding:12px;font-size:.85rem}
+  .side b{display:block;font-family:var(--display);font-size:.95rem;font-variant-numeric:tabular-nums}
+  @media (max-width:520px){.rg,.axis{grid-template-columns:1fr 100px}.rg .lab{grid-column:1/-1}.axis>div:first-child{display:none}}
+</style>

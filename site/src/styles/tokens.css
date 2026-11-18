@@ -1,0 +1,40 @@
+/* Fonts are self-hosted: a page about GDPR should not hand visitor IPs to Google Fonts. */
+@font-face{font-family:"Golos Text";src:url(../assets/fonts/golos-text-cyrillic.woff2) format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Golos Text";src:url(../assets/fonts/golos-text-latin.woff2) format("woff2");font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Unbounded";src:url(../assets/fonts/unbounded-cyrillic.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Unbounded";src:url(../assets/fonts/unbounded-latin.woff2) format("woff2");font-weight:500 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* One set of tokens for both themes: light-dark() picks a value by color-scheme.
+   Auto follows the system; the theme switch sets color-scheme on <html> directly. */
+:root{
+  color-scheme:light dark;
+  --paper:light-dark(#EEF1F5,#0C1119);
+  --sheet:light-dark(#FFFFFF,#171E2B);
+  --ink:light-dark(#172033,#E7EAF1);
+  --ink-2:light-dark(#4B5569,#B0B8C8);
+  --ink-3:light-dark(#5E6779,#8F98AB);
+  --rule:light-dark(#D8DDE6,#2A3344);
+  --mark:light-dark(#FFE15C,#E9C531);
+  --mark-ink:light-dark(#172033,#141A24);
+  --accent:light-dark(#2445D6,#93A6FF);
+  --accent-soft:light-dark(#E6EBFF,#222D4D);
+  --ok:light-dark(#17804F,#5BC98E);
+  --ok-soft:light-dark(#E2F4EA,#14301F);
+  --warn:light-dark(#A86400,#F0B04A);
+  --warn-ink:light-dark(#8A5200,#F0B04A);
+  --warn-soft:light-dark(#FFF1DA,#352610);
+  --bad:light-dark(#C2302B,#FF7B72);
+  --bad-soft:light-dark(#FDE6E4,#3A1A18);
+  /* the dark showcase tiles stay dark in both themes */
+  --night:light-dark(#172033,#0F1626);
+  --night-rule:light-dark(#172033,#2A3344);
+  /* the first tile: ink on light, gold on dark */
+  --hero:light-dark(#172033,#C9A83E);
+  --hero-ink:light-dark(#EEF1F5,#141A24);
+  --hero-key:light-dark(#FFE15C,#141A24);
+  --hero-wash:light-dark(rgba(255,255,255,.08),rgba(0,0,0,.08));
+  --hero-rule:light-dark(rgba(255,255,255,.18),rgba(0,0,0,.18));
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Golos Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}

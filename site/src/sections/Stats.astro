@@ -1,0 +1,26 @@
+---
+import { langOf, useText } from '../i18n';
+import Tile from '../components/Tile.astro';
+
+const lang = langOf(Astro.url);
+const { t, get } = useText(lang);
+const number = new Intl.NumberFormat(lang);
+const REPORT = 'https://cms.law/en/deu/publication/GDPR-Enforcement-Tracker-Report/numbers-and-figures';
+const [finesLabel, spainLabel, averageLabel] = get<string[]>('stats.items');
+---
+<Tile span={6} id="stats" title={t('stats.title')}>
+  <div class="stat">
+    <div><span class="big">{number.format(2685)}</span><small>{finesLabel}</small></div>
+    <div><span class="big">{number.format(1048)}</span><small>{spainLabel}</small></div>
+    <div><span class="big">{get('stats.averageFine')}</span><small>{averageLabel}</small></div>
+  </div>
+  <p class="note" set:html={t('stats.note')} />
+  <p class="src"><a href={REPORT}>CMS Enforcement Tracker Report 2026</a></p>
+</Tile>
+
+<style is:global>
+  .stat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0}
+  .stat small{display:block;color:var(--ink-3);font-size:.78rem}
+  #stats .note{font-size:.88rem}
+  @media (max-width:520px){.stat{grid-template-columns:1fr}}
+</style>

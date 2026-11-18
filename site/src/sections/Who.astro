@@ -1,0 +1,19 @@
+---
+import { langOf, useText } from '../i18n';
+import Tile from '../components/Tile.astro';
+
+const { t } = useText(langOf(Astro.url));
+---
+<Tile span={6} id="who" title={t('who.title')}>
+  <div class="vs">
+    <div set:html={t('who.small')} />
+    <div set:html={t('who.big')} />
+  </div>
+</Tile>
+
+<style is:global>
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .vs div{border-radius:8px;padding:12px;font-size:.9rem;background:var(--paper)}
+  .vs b{font-weight:600;font-size:.9rem;display:block;margin-bottom:4px}
+  @media (max-width:520px){.vs{grid-template-columns:1fr}}
+</style>

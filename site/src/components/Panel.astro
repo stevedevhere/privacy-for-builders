@@ -1,0 +1,28 @@
+---
+import { langOf, useText } from '../i18n';
+import { PANELS, type PanelId } from '../data/panels';
+
+/** One tab's content: a bento grid of tiles, then a link to the next tab. */
+interface Props {
+  id: PanelId;
+}
+const { id } = Astro.props;
+const { get } = useText(langOf(Astro.url));
+const next = PANELS[PANELS.indexOf(id) + 1];
+---
+<section class="panel" id={id} role="tabpanel" aria-labelledby={`tab-${id}`} tabindex="-1">
+  <h2 class="vh">{get(`tabs.${id}`)}</h2>
+  <div class="bento"><slot /></div>
+  {next && <p class="next"><a href={`#${next}`}>{get('tabs.next')} {get(`tabs.${next}`)}</a></p>}
+</section>
+
+<style is:global>
+  .panel{padding-top:14px;scroll-margin-top:60px}
+  .panel:focus{outline:none}
+  .js:not(.tabs-ready) .panel:not(:first-of-type){display:none}
+  .panel [id]{scroll-margin-top:64px}
+  .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+  .next{margin:18px 2px 0;text-align:right}
+  .next a{font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+  .next a:hover{border-color:var(--ink)}
+</style>

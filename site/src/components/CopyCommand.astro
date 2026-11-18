@@ -1,0 +1,27 @@
+---
+import { langOf, useText } from '../i18n';
+
+/** A shell command with a copy button. The button's success and failure labels come from the dictionary. */
+interface Props {
+  id: string;
+  title: string;
+  command: string;
+}
+const { id, title, command } = Astro.props;
+const { get } = useText(langOf(Astro.url));
+---
+<div class="cmd" id={id}>
+  <div class="cmd-h">
+    <span>{title}</span>
+    <button type="button" class="copy" data-copy data-done={get('skills.copied')} data-fail={get('skills.copyFailed')}>{get('skills.copy')}</button>
+  </div>
+  <code translate="no">{command}</code>
+</div>
+
+<style is:global>
+  .cmd{display:flex;flex-direction:column;gap:6px;margin-top:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:6px 6px 10px 12px;scroll-margin-top:80px}
+  .cmd-h{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.76rem;color:#9AA3B5}
+  .cmd code{min-width:0;font:.76rem/1.5 var(--mono);color:#DCE2EE;white-space:pre;overflow-x:auto;scrollbar-width:thin;padding:2px 0}
+  .copy{flex:none;font:inherit;font-size:.76rem;font-weight:600;color:#172033;background:#EEF1F5;border:0;border-radius:7px;padding:6px 10px;cursor:pointer;min-height:32px}
+  .copy:hover{background:#FFFFFF}
+</style>

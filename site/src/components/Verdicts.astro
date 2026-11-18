@@ -1,0 +1,17 @@
+---
+import { langOf, useText } from '../i18n';
+
+/** A list of judgements, each with a severity square: no (red), mid (amber), yes (green). */
+interface Props {
+  items: { title: string; text: string }[];
+  tones: ('no' | 'mid' | 'yes')[];
+}
+const { items, tones } = Astro.props;
+const { html } = useText(langOf(Astro.url));
+---
+{items.map((item, i) => (
+  <div class:list={['verdict', tones[i]]}>
+    <b set:html={html(item.title)} />
+    <span set:html={html(item.text)} />
+  </div>
+))}

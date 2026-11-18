@@ -1,0 +1,31 @@
+---
+import { langOf, useText } from '../i18n';
+import { sourceLabel } from '../data/sources';
+import { AUTHOR } from '../data/site';
+
+interface Props {
+  sources: string[];
+}
+const { sources } = Astro.props;
+const { get } = useText(langOf(Astro.url));
+---
+<footer class="foot">
+  <details class="srcs" id="sources">
+    <summary>{get<string>('footer.sources').replace('{count}', String(sources.length))}</summary>
+    <p>{get('footer.sourcesNote')}</p>
+    <ol>{sources.map((url) => <li><a href={url}>{sourceLabel(url)}</a></li>)}</ol>
+  </details>
+  <p>{get('footer.disclaimer')}</p>
+  <p class="by">© 2026 <a href={AUTHOR.url}>stevedevhere.com</a></p>
+</footer>
+
+<style is:global>
+  .foot{font-size:.8rem;color:var(--ink-3);margin-top:24px;max-width:80ch}
+  .foot p{margin:.3rem 0}
+  .foot a{color:var(--ink-3)}
+  .foot .by{color:var(--ink-2)}
+  .srcs{margin:0 0 18px}
+  .srcs summary{cursor:pointer;font-weight:600}
+  .srcs ol{columns:2 280px;column-gap:28px;font-size:.78rem;padding-left:1.4rem;margin:10px 0 0}
+  .srcs li{break-inside:avoid;margin:0 0 4px;overflow-wrap:anywhere}
+</style>

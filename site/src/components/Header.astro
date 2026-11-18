@@ -1,0 +1,49 @@
+---
+import { langOf, useText } from '../i18n';
+import HeroContours from './HeroContours.astro';
+import ThemeSwitch from './ThemeSwitch.astro';
+import LangSwitch from './LangSwitch.astro';
+import Button from './Button.astro';
+
+const { t, get, html } = useText(langOf(Astro.url));
+const badge = (kind: 'data' | 'inference') => html(`[${get(`evidence.${kind}`)}]`);
+---
+<header class="top">
+  <HeroContours />
+  <div class="prefs">
+    <ThemeSwitch />
+    <LangSwitch />
+  </div>
+  <div class="intro">
+    <h1 set:html={t('header.title')} />
+    <p set:html={t('header.lead')} />
+    <div class="hero-cta">
+      <Button href="#tools" variant="ink">{get('header.checkProduct')}</Button>
+      <Button href="#laws" variant="ghost">{get('header.lawsMap')}</Button>
+    </div>
+  </div>
+</header>
+<div class="legend">
+  <span><Fragment set:html={badge('data')} />{get('header.legend.data')}</span>
+  <span><Fragment set:html={badge('inference')} />{get('header.legend.inference')}</span>
+</div>
+
+<style is:global>
+  .top{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;min-height:min(58vh,560px);padding:24px 0 40px;margin-bottom:8px}
+  .top h1{font-size:clamp(1.9rem,5.2vw,3.4rem);font-weight:600;letter-spacing:-.02em;line-height:1.08;max-width:18ch}
+  .top .intro{position:relative;z-index:1}
+  .top .intro p{color:var(--ink-2);margin:1rem 0 0;max-width:58ch;font-size:1.05rem}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .top .hb{position:absolute;inset:0 -2% 0 auto;width:62%;height:100%;z-index:0;pointer-events:none;
+    -webkit-mask-image:radial-gradient(closest-side at 58% 50%,#000 45%,transparent);mask-image:radial-gradient(closest-side at 58% 50%,#000 45%,transparent)}
+  .hb path{fill:none;stroke:var(--accent);stroke-width:1;opacity:.22}
+  .hb path.e{opacity:.5}
+  .prefs{position:absolute;top:16px;right:0;z-index:2;display:flex;flex-wrap:wrap;gap:8px}
+  .seg{display:inline-flex;background:var(--sheet);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  .seg button,.seg a{font:inherit;font-size:.76rem;color:var(--ink-2);background:none;border:0;border-radius:999px;padding:4px 10px;cursor:pointer;text-decoration:none;min-height:28px;display:inline-flex;align-items:center}
+  .seg [aria-checked="true"],.seg [aria-current="page"]{background:var(--ink);color:var(--paper)}
+  .legend{display:flex;gap:6px 16px;flex-wrap:wrap;align-items:center;font-size:.76rem;color:var(--ink-3);margin:10px 0 14px}
+  .legend .tag{margin:0 5px 0 0}
+  @media (max-width:700px){.top .hb{width:100%;opacity:.35}}
+  @media (max-width:600px){.prefs{position:static;align-self:flex-end;margin-bottom:24px}.top{min-height:0;padding-top:12px}}
+</style>

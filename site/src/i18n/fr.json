@@ -1,0 +1,559 @@
+{
+  "meta": {
+    "title": "Le RGPD en pratique : coût, contrôles, amendes",
+    "description": "Le RGPD et les autres lois sur les données personnelles en pratique : catégories de données, quand s’occuper de la confidentialité à chaque étape du produit, carte des lois par pays, représentant dans l’UE, coûts, contrôles et amendes. Sources et déductions signalées.",
+    "ogDescription": "Catégories de données, étapes du produit, carte des lois par pays, représentant dans l’UE, coûts, contrôles et amendes.",
+    "lawsDataTitle": "Lois sur les données personnelles par pays (données de la carte)",
+    "summaryTitle": "Résumé de la page en Markdown",
+    "about": [
+      "GDPR",
+      "Swiss nFADP",
+      "UK GDPR",
+      "protection des données personnelles",
+      "représentant dans l’UE au titre de l’article 27"
+    ],
+    "ldDescription": "Ce qui compte comme conformité au RGPD, quelles données exigent quel régime, quand s’occuper de la confidentialité à chaque étape du produit, quelle loi s’applique dans quel pays, combien cela coûte, qui contrôle et qui est sanctionné.",
+    "datasetName": "Lois sur les données personnelles par pays",
+    "datasetDescription": "Catégorie de loi pour 186 pays et territoires : RGPD, loi propre avec adéquation de l’UE, loi propre, États-Unis, projet, pas de loi ; différences courtes et détaillées avec le RGPD pour les pays clés.",
+    "codeDescription": "Skills pour agents IA : audit d’un produit au regard du RGPD, de la nLPD et d’autres lois."
+  },
+  "evidence": {
+    "data": "données",
+    "inference": "déduction",
+    "baseline": "référence",
+    "verify": "à vérifier",
+    "source": "Source :"
+  },
+  "header": {
+    "theme": {
+      "label": "Thème",
+      "auto": "Auto",
+      "light": "Clair",
+      "dark": "Sombre"
+    },
+    "language": "Langue",
+    "title": "Le <span translate=\"no\">RGPD</span> et les autres lois sur les données, clairement et pas à pas",
+    "lead": "Ce qu’exige la loi, quand commencer, quelle loi s’applique dans quel pays et combien cela coûte. Pour les développeurs et les petits produits. Vérifié auprès des sources le 17 novembre 2026.",
+    "checkProduct": "Vérifier votre produit",
+    "lawsMap": "Carte des lois",
+    "legend": {
+      "data": "dit dans une source",
+      "inference": "découle des sources, sans y être dit explicitement"
+    }
+  },
+  "tabs": {
+    "label": "Sections de la page",
+    "main": "Essentiel",
+    "data": "Données",
+    "start": "Quand commencer",
+    "laws": "Lois par pays",
+    "money": "Argent et risques",
+    "tools": "Skills",
+    "next": "Suite :"
+  },
+  "hero": {
+    "title": "La conformité ne « s’obtient » pas. C’est un état que vous devez pouvoir prouver à tout moment",
+    "lead": "Pas de licence, d’enregistrement ni de certificat obligatoire. Vous payez pour que quatre choses existent et correspondent à la réalité.",
+    "pillars": [
+      "<b>Base légale</b>pour chaque finalité de traitement",
+      "<b>Documents</b>registre, politique de confidentialité, DPA ; une AIPD en cas de risque élevé",
+      "<b>Droits</b>accès, effacement, portabilité, sous un mois",
+      "<b>Sécurité</b>et un plan de 72 heures en cas de fuite"
+    ],
+    "applies": {
+      "title": "Quand le RGPD commence à vous concerner",
+      "text": "Si vous avez un établissement dans l’UE, si vous proposez délibérément des biens ou des services à des personnes dans l’UE, ou si vous y suivez leur comportement (art. 3). Un seul client suffit alors. Un visiteur de l’UE venu par hasard ne vous y soumet pas, tant que vous ne ciblez pas l’UE et n’y suivez personne. Aucune exemption pour les petites entreprises. [données https://gdpr-info.eu/art-3-gdpr/]"
+    },
+    "urgent": {
+      "title": "Quand cela devient urgent [déduction https://gdpr-info.eu/art-28-gdpr/]",
+      "items": [
+        "votre premier client B2B dans l’UE envoie un DPA et un questionnaire de sécurité ;",
+        "pixels et outils d’analyse sur le trafic de l’UE ;",
+        "données de catégories particulières ou données d’enfants ;",
+        "votre première fuite."
+      ]
+    },
+    "stagesLink": "Étape par étape"
+  },
+  "badge": {
+    "title": "Le badge « GDPR compliant »",
+    "verdicts": [
+      {
+        "title": "Votre propre badge",
+        "text": "Il n’existe pas et il n’a jamais existé de logo officiel de l’UE. Un badge fait maison n’a aucune valeur juridique. [données https://www.complyjet.com/blog/gdpr-logo]"
+      },
+      {
+        "title": "« Certified » sans certificat",
+        "text": "Trompeur : au Luxembourg, la mention « CNPD certified » sans certificat GDPR-CARPA valide est considérée comme telle. [données https://luxgap.com/lois/rgpd/cons-100/?lang=en]"
+      },
+      {
+        "title": "Certificat au titre de l’art. 42",
+        "text": "Europrivacy et d’autres : une certification volontaire, délivrée uniquement par un organisme accrédité ; elle couvre les opérations indiquées, pas toute l’entreprise. CEPD : un certificat ne signifie pas une conformité complète. [données https://www.clym.io/blog/edpb-approves-first-european-data-protection-seals-what-it-means-for-your-gdpr-compliance]"
+      },
+      {
+        "title": "Ce qui fonctionne vraiment",
+        "text": "Un DPA, la liste des sous-traitants ultérieurs et la description des mesures de sécurité : c’est ce que le client demandera. [déduction https://gdpr-info.eu/art-28-gdpr/]"
+      }
+    ],
+    "sources": "<a href=\"https://www.complyjet.com/blog/gdpr-logo\">ComplyJet</a>, <a href=\"https://luxgap.com/lois/rgpd/cons-100/?lang=en\">Luxgap</a>, <a href=\"https://captaincompliance.com/education/croatias-dpa-explains-gdpr-certification-what-a-seal-proves-and-what-it-does-not/\">l’autorité croate</a>, <a href=\"https://www.clym.io/blog/edpb-approves-first-european-data-protection-seals-what-it-means-for-your-gdpr-compliance\">Clym sur le CEPD</a>"
+  },
+  "summary": {
+    "data": {
+      "title": "Données : le régime dépend de la catégorie",
+      "text": "Les données ordinaires (nom, e-mail, IP) demandent une base légale, une politique claire et une durée de conservation. La santé, l’état psychique et la vie intime exigent en général un consentement explicite, donné par une action distincte, et une AIPD ; en dessous de l’âge du consentement numérique, il faut celui d’un parent. Le piège le plus courant : les données dont on peut déduire quelque chose de sensible relèvent du même régime strict. [données https://connectontech.bakermckenzie.com/sensitive-data-under-the-cjeus-spotlight-practical-implications/]",
+      "link": "Toutes les catégories et un exemple d’analyse"
+    },
+    "start": {
+      "title": "Quand commencer",
+      "items": [
+        "<b>Prototype pour vous-même</b> — penser l’architecture, la loi est presque muette",
+        "<b>Bêta fermée</b> — un texte honnête, le consentement, la suppression",
+        "<b>Lancement public</b> — politique complète, DPA, plan en cas de fuite",
+        "<b>Argent et B2B</b> — contrats, modèle de DPA, mesures de sécurité"
+      ],
+      "link": "Toutes les étapes en détail"
+    },
+    "laws": {
+      "title": "Lois par pays",
+      "items": [
+        "<b class=\"num\">{g}</b>pays de l’UE et de l’EEE appliquent le RGPD",
+        "<b class=\"num\">{a}</b>ont leur propre loi, reconnue adéquate par l’UE",
+        "<b class=\"num\">{l}</b>ont leur propre loi générale sur les données"
+      ],
+      "link": "Ouvrir la carte"
+    },
+    "money": {
+      "title": "Argent et risques",
+      "items": [
+        "<b class=\"num\">à partir de 490 €</b>par an : représentant dans l’UE",
+        "<b class=\"num\">à partir de 33 €</b>par mois : DPO externe",
+        "<b class=\"num\">2 500 €</b>amende infligée à un particulier pour un e-mail groupé où toutes les adresses étaient visibles"
+      ],
+      "link": "Coûts, contrôles et amendes"
+    },
+    "tools": {
+      "title": "Vérifier votre produit",
+      "text": "Trois skills ouverts pour agents IA passent votre code au crible de cette logique : ils trouvent les données personnelles jusqu’au fichier et à la ligne et proposent des correctifs.",
+      "link": "Skills pour agents IA"
+    }
+  },
+  "categories": {
+    "title": "Les catégories de données et ce qu’exige chacune",
+    "lead": "Le régime dépend de ce que vous traitez exactement, et une application gère presque toujours plusieurs catégories à la fois. Le carré à côté du niveau de risque l’indique en couleur. Les amendes ont deux niveaux : jusqu’à 20 millions d’euros ou 4 % du chiffre d’affaires mondial, le montant le plus élevé étant retenu, et jusqu’à 10 millions ou 2 % (art. 83). [données https://eur-lex.europa.eu/eli/reg/2016/679/oj]",
+    "need": "Ce qu’il faut",
+    "cost": "Coût d’une erreur",
+    "items": {
+      "ordinary": {
+        "title": "Données personnelles ordinaires <small>art. 4(1), 6</small>",
+        "level": "risque moyen",
+        "example": "Nom, e-mail, IP, ID d’appareil, ID de cookie, historique d’activité.",
+        "need": "Une des 6 bases légales par finalité, une politique de confidentialité, une durée de conservation, des DPA avec les prestataires, les droits des utilisateurs.",
+        "cost": "<span class=\"risk mid\">jusqu’à 4 %</span>bases légales et principes ; <span class=\"risk lo\">jusqu’à 2 %</span>sécurité et documentation."
+      },
+      "special": {
+        "title": "Catégories particulières <small>art. 9</small>",
+        "level": "risque élevé",
+        "example": "Santé, y compris mentale ; vie et orientation sexuelles ; biométrie à des fins d’identification ; génétique ; origine ethnique ; religion ; opinions politiques ; appartenance syndicale.",
+        "need": "Une base de l’art. 6 plus une exception de l’art. 9(2), pour les applications en général un consentement explicite donné par une action distincte. AIPD, chiffrement, aucun traceur tiers à proximité.",
+        "cost": "<span class=\"risk hi\">jusqu’à 4 %</span>une fuite est presque toujours un « risque élevé » : informer les personnes elles-mêmes."
+      },
+      "inferred": {
+        "title": "Indirectement sensibles <small>jurisprudence de la CJUE</small>",
+        "level": "risque élevé",
+        "example": "Les données dont on peut déduire quelque chose de sensible : le nom d’un partenaire (affaire OT, 2022), une commande de médicament (Lindenapotheke, 2024).",
+        "need": "Le même régime que pour l’art. 9. L’intention et l’exactitude de la déduction n’ont pas d’importance. [données https://connectontech.bakermckenzie.com/sensitive-data-under-the-cjeus-spotlight-practical-implications/]",
+        "cost": "<span class=\"risk hi\">jusqu’à 4 %</span>le piège le plus courant : croire que si l’on ne pose jamais de question directe sur la santé, il n’y a pas de catégories particulières. [déduction https://gdpr-info.eu/art-9-gdpr/]"
+      },
+      "children": {
+        "title": "Données des enfants <small>art. 8</small>",
+        "level": "risque accru",
+        "example": "Utilisateurs sous l’âge du consentement numérique : 16 ans par défaut, les pays peuvent l’abaisser jusqu’à 13 ans. Par exemple : Allemagne, Irlande, Pays-Bas 16 ; France 15 ; Autriche, Espagne, Italie 14 ; Belgique, Danemark 13.",
+        "need": "Si vous vous fondez sur le consentement : consentement parental et vérification raisonnable. Un texte compréhensible par les enfants, la confidentialité par défaut.",
+        "cost": "<span class=\"risk lo\">jusqu’à 2 %</span>au titre de l’art. 8 ; en pratique sanctionné avec des manquements aux principes, et alors jusqu’à 4 % (TikTok, Instagram)."
+      },
+      "profiling": {
+        "title": "Profilage <small>art. 4(4), 21, 22</small>",
+        "level": "risque accru",
+        "example": "Évaluation automatisée de la personnalité, du comportement, des préférences : scoring, types, prédictions.",
+        "need": "Expliquez la logique dans la politique de confidentialité, offrez un droit d’opposition. Une décision aux effets importants sans intervention humaine n’est permise que sur la base d’un contrat, de la loi ou d’un consentement explicite. En Suisse, le « profilage à risque élevé » exige un consentement exprès.",
+        "cost": "<span class=\"risk mid\">jusqu’à 4 %</span>les droits des personnes relèvent du palier supérieur."
+      },
+      "pseudonymous": {
+        "title": "Pseudonymes et anonymes <small>art. 4(5), considérant 26</small>",
+        "level": "risque plus faible",
+        "example": "Pseudonymes : la clé est conservée à part, par exemple un e-mail haché. Anonymes : aucun moyen raisonnable ne permet d’isoler la personne.",
+        "need": "Les données pseudonymes restent des données personnelles, avec simplement moins de risque. Les données anonymes sortent entièrement du RGPD, mais les petits échantillons sont faciles à réidentifier.",
+        "cost": "<span class=\"risk mid\">comme pour les données d’origine</span>si les données « anonymes » s’avèrent réidentifiables."
+      }
+    },
+    "note": "Une autre catégorie à laquelle on pense rarement : les données relatives aux condamnations et infractions pénales (art. 10). Une entreprise privée ne peut les traiter que si la loi l’autorise expressément.",
+    "sources": "<a href=\"https://connectontech.bakermckenzie.com/sensitive-data-under-the-cjeus-spotlight-practical-implications/\">Baker McKenzie sur les affaires OT, Meta et Lindenapotheke</a>, <a href=\"https://www.activemind.legal/legislation/gdpr/recital-35\">considérant 35</a>, <a href=\"https://gdprlocal.com/dealing-with-childrens-data/\">âge du consentement par pays</a>, <a href=\"https://prighter.com/resources/laws/swiss-fadp/fadp/articles/article-6\">nLPD art. 6</a>, <a href=\"https://eur-lex.europa.eu/eli/reg/2016/679/oj\">texte du RGPD</a>"
+  },
+  "example": {
+    "title": "Exemple d’analyse : une application de test psychologique pour couples",
+    "lead": "Logique des données : une personne répond à des questions sur la proximité, l’anxiété, l’évitement et l’attirance ; obtient un profil sur plusieurs échelles ; peut inviter une seconde personne, et elles voient un résultat commun. L’opérateur est en Suisse, les utilisateurs en Suisse et dans l’UE, donc la nLPD et le RGPD s’appliquent. La classification ci-dessous est une déduction à partir des textes et de la jurisprudence de la CJUE. [déduction https://gdpr-info.eu/art-9-gdpr/]",
+    "columns": {
+      "data": "Quelles données",
+      "category": "Catégorie",
+      "need": "Ce qu’il faut",
+      "wrong": "En cas d’erreur"
+    },
+    "rows": {
+      "anxiety": {
+        "data": "<b>Réponses sur l’anxiété, la détresse, l’évitement</b>échelles d’état émotionnel",
+        "category": [
+          "particulière : santé"
+        ],
+        "need": "Un consentement explicite par une action distincte avant la première question (RGPD art. 9(2)(a) ; en Suisse art. 6(7)). Une AIPD. Seulement les questions nécessaires.",
+        "wrong": "Le palier d’amende le plus élevé, des plaintes, des actions en réparation."
+      },
+      "intimacy": {
+        "data": "<b>Réponses sur l’intimité physique et l’attirance</b>",
+        "category": [
+          "particulière : vie sexuelle"
+        ],
+        "need": "Le même consentement explicite. La possibilité de passer une question sans fausser le résultat.",
+        "wrong": "La divulgation au partenaire ou à des tiers est une fuite à risque élevé : notifier l’autorité et les personnes elles-mêmes."
+      },
+      "profile": {
+        "data": "<b>Profil calculé</b>type, scores sur les échelles, prédiction",
+        "category": [
+          "profilage",
+          "particulière déduite"
+        ],
+        "need": "Expliquez simplement dans la politique de confidentialité comment le résultat est calculé. En Suisse, c’est probablement du « profilage à risque élevé » : une évaluation d’aspects essentiels de la personnalité, donc là encore un consentement exprès.",
+        "wrong": "Le profil est plus sensible que les réponses elles-mêmes : en cas de fuite, c’est le principal préjudice."
+      },
+      "joint": {
+        "data": "<b>Résultat commun pour deux</b>",
+        "category": [
+          "particulière, données de deux personnes"
+        ],
+        "need": "Le consentement de chacun. Les réponses de l’un ne sont pas visibles par l’autre sans son consentement. Si l’un supprime ses données, sa part disparaît du résultat commun, et pas seulement son accès.",
+        "wrong": "La seconde personne est une personne concernée distincte, avec le droit de porter plainte et d’agir en justice. L’indemnisation du préjudice moral n’exige pas de seuil de gravité (CJUE, C-300/21). [données https://jonesday.com/en/insights/2023/05/cjeu-clarifies-the-right-to-compensation-for-gdpr-infringements-causing-nonmaterial-damage]"
+      },
+      "nonUser": {
+        "data": "<b>Réponses sur une personne qui n’a pas fait le test</b>",
+        "category": [
+          "généralement pas des données personnelles pour l’opérateur"
+        ],
+        "need": "Ne stockez ni le nom, ni les coordonnées, ni la photo du partenaire. Tant que l’opérateur ne peut pas l’identifier, ce ne sont pas ses données personnelles.",
+        "wrong": "Un champ « nom du partenaire » en fait une personne concernée que vous devez informer au titre de l’art. 14."
+      },
+      "technical": {
+        "data": "<b>ID de l’appareil, lien d’invitation, IP lors de la synchronisation</b>",
+        "category": [
+          "ordinaires"
+        ],
+        "need": "Base : « contrat ». Durée de vie courte pour les liens et les sessions de transfert. Hébergement aux États-Unis : certification DPF du prestataire ou CCT.",
+        "wrong": "Un lien deviné ouvre le résultat de quelqu’un d’autre : c’est déjà une fuite de données de catégories particulières."
+      },
+      "age": {
+        "data": "<b>Âge de l’utilisateur</b>",
+        "category": [
+          "enfants"
+        ],
+        "need": "Le sujet attirera des adolescents. Le consentement explicite d’un mineur aux catégories particulières est douteux, d’où un seuil de 16+ ou 18+ avec vérification de l’âge.",
+        "wrong": "Enfants + catégories particulières : la combinaison que les autorités sanctionnent le plus volontiers."
+      }
+    },
+    "callouts": [
+      "<b>Ce qui réduit le plus le risque.</b> Conservez les réponses uniquement sur l’appareil et n’envoyez pas au serveur ce dont le résultat commun n’a pas besoin. Ce que l’opérateur n’a pas, il ne peut pas le perdre.",
+      "<b>Ce qui est presque gratuit.</b> Un écran de consentement avant le test, une politique de confidentialité claire avec le contact de l’opérateur, un bouton « supprimer pour les deux », aucune analyse sur les écrans de questions.",
+      "<b>Une nuance suisse.</b> En cas de manquement intentionnel au devoir d’informer, la nLPD sanctionne personnellement la personne responsable, jusqu’à 250 000 CHF. L’entreprise n’est visée qu’à titre exceptionnel."
+    ]
+  },
+  "stages": {
+    "title": "Ce que la loi demande à chaque étape du produit",
+    "lead": "La loi ne fixe aucun seuil de nombre de personnes : les obligations commencent avec la première personne qui n’est pas vous. [données https://gdpr-info.eu/art-2-gdpr/] Mais ce qu’une autorité vérifierait réellement, et ce qu’il est moins cher de faire tout de suite, dépend beaucoup de l’étape. Trouvez votre ligne ; les données sensibles et l’argent ajoutent des exigences à toute étape. [déduction https://cms.law/en/int/publication/GDPR-Enforcement-Tracker-Report/executive-summary]",
+    "items": {
+      "prototype": {
+        "title": "Prototype pour vous-même",
+        "who": "uniquement vos propres données ou des données inventées",
+        "cells": [
+          "<b>Déjà obligatoire</b>Presque rien selon la loi : les données personnelles à usage strictement personnel sont hors du RGPD (art. 2(2)(c)). [données https://gdpr-info.eu/art-2-gdpr/]",
+          "<b>À faire maintenant, tant que c’est bon marché</b>Décidez de l’architecture : ce qui ne quitte jamais l’appareil, ce qui est chiffré avant l’envoi, quelle région de stockage, aucune analyse tierce. C’est ce qui coûte le plus cher à refaire ensuite. [déduction https://gdpr-info.eu/art-25-gdpr/]",
+          "<b>Étape suivante quand</b>la première personne autre que vous arrive, même un ami."
+        ]
+      },
+      "closedBeta": {
+        "title": "Bêta fermée avec des proches",
+        "who": "jusqu’à quelques dizaines de personnes, sur invitation",
+        "cells": [
+          "<b>Déjà obligatoire</b>Un texte court et honnête : qui vous êtes, ce que vous collectez, pourquoi, où c’est stocké, comment le supprimer. Suppression sur demande. Si les questions touchent à la santé, à l’intimité ou aux enfants, un consentement explicite par une case à cocher distincte. Pas de secrets dans le dépôt.",
+          "<b>Peut attendre</b>Un représentant dans l’UE, le dossier documentaire complet, un avocat. Formellement, le registre des traitements est déjà requis avec des catégories particulières ; une version courte prend une heure. Une plainte de vos proches est peu probable, mais le préjudice d’une fuite est le même. [déduction https://gdpr-info.eu/art-30-gdpr/]",
+          "<b>Étape suivante quand</b>des inconnus ou un lien public apparaissent."
+        ]
+      },
+      "openBeta": {
+        "title": "Bêta ouverte ou lancement gratuit",
+        "who": "tout le monde peut s’inscrire",
+        "cells": [
+          "<b>Déjà obligatoire</b>Une politique complète : opérateur et contact, finalités, bases légales, destinataires et pays, durées de conservation, droits, où se plaindre. Des DPA avec l’hébergeur et les services. Un bandeau de consentement s’il y a des cookies ou des analyses facultatifs. Un plan de réponse aux fuites et un registre des incidents. Suppression et export.",
+          "<b>Si vous êtes hors de l’UE et vos utilisateurs dans l’UE</b>Un représentant au titre de l’art. 27, sauf si l’exemption s’applique (voir <a href=\"#rep\">ci-dessous</a>). Pour les catégories particulières, une AIPD avant le lancement.",
+          "<b>Étape suivante quand</b>vous commencez à facturer ou à travailler avec des entreprises."
+        ]
+      },
+      "sensitive": {
+        "title": "Données sensibles, à toute étape",
+        "who": "santé, état psychique, intimité, enfants, biométrie",
+        "cells": [
+          "<b>Dès le premier utilisateur</b>Consentement explicite (RGPD art. 9(2)(a), nLPD art. 6(7)), seulement les questions nécessaires, un seuil d’âge de 16+ ou 18+, aucune donnée vers les outils d’analyse ou les services d’IA sans consentement distinct.",
+          "<b>Avant le lancement public</b>Une AIPD (art. 35) et un registre des traitements. Une fuite de ces données est presque toujours un « risque élevé » : notifier l’autorité et les personnes.",
+          "<b>Ce qui réduit le plus le risque</b>ne stockez pas les réponses sur un serveur, ou seulement un texte chiffré dont vous n’avez pas la clé. [déduction https://gdpr-info.eu/art-34-gdpr/]"
+        ]
+      },
+      "paid": {
+        "title": "Produit payant",
+        "who": "abonnements, achats",
+        "cells": [
+          "<b>S’ajoute</b>Conditions d’utilisation et contrat, le prestataire de paiement comme destinataire distinct des données, conservation des justificatifs de paiement pendant la durée fiscale. En Suisse, vendre en ligne exige une mention légale (Impressum) : nom, adresse postale et e-mail (LCD art. 3(1)(s)). [données https://www.kmu.admin.ch/de/die-gesetze-der-schweiz-und-der-eu]",
+          "<b>Étape suivante quand</b>votre premier client professionnel arrive."
+        ]
+      },
+      "b2b": {
+        "title": "Clients professionnels (B2B)",
+        "who": "vous vendez aux entreprises",
+        "cells": [
+          "<b>S’ajoute</b>Le client enverra un DPA et un questionnaire de sécurité. Il vous faut votre propre modèle de DPA, la liste des sous-traitants ultérieurs avec leurs régions et la description des mesures de sécurité. Sans cela, la vente reste bloquée. [déduction https://gdpr-info.eu/art-28-gdpr/]"
+        ]
+      },
+      "growth": {
+        "title": "Croissance ou incident",
+        "who": "des milliers d’utilisateurs, première fuite",
+        "cells": [
+          "<b>S’ajoute</b>Un DPO si votre activité principale est un traitement à grande échelle de catégories particulières ou un suivi systématique (art. 37). Revue régulière, audit externe. Après une fuite, 72 heures pour notifier au titre du RGPD. [données https://gdpr-info.eu/art-37-gdpr/]"
+        ]
+      }
+    },
+    "example": "Exemple : l’application de test pour couples de l’<a href=\"#example\">analyse ci-dessous</a>, en bêta fermée, relève à la fois des lignes « bêta fermée » et « données sensibles ». Consentement, suppression et texte honnête sont nécessaires dès maintenant ; un représentant dans l’UE dès que l’application est proposée à des personnes dans l’UE. [déduction https://gdpr-info.eu/art-27-gdpr/]"
+  },
+  "map": {
+    "title": "Carte : où s’applique le RGPD, et où c’est une autre loi",
+    "lead": "Cliquez sur un pays : d’abord en bref ce qui le distingue du RGPD, puis « Détails » pour la version complète. Les petits pays sont représentés par des points ; tout pays peut être choisi dans la liste. Cliquer sur un élément de la légende met le groupe en évidence. Des fiches détaillées existent pour l’UE et 29 pays clés ; pour les autres, le nom de la loi et un lien pour vérifier les différences.",
+    "imageTitle": "Carte : quelle loi sur les données personnelles s’applique dans chaque pays",
+    "loading": "Chargement de la carte…",
+    "legend": "Légende de la carte",
+    "country": "Pays",
+    "frenchGuiana": "Guyane (France)",
+    "pick": "Choisissez sur la carte ou ici",
+    "empty": "Ce panneau indiquera quelle loi s’applique dans le pays choisi et en quoi elle diffère du RGPD.",
+    "sources": "Classification : le tableau du World Privacy Forum de juin 2024, repris par <a href=\"https://captaincompliance.com/education/global-data-privacy-laws-a-comprehensive-overview-of-legislation-for-every-country/\">Captain Compliance</a> ; décisions d’adéquation de l’UE : <a href=\"https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en\">Commission européenne</a> ; la nouvelle décision d’adéquation pour le Brésil, les corrections pour le Chili, le Vietnam, le Mexique et 13 autres pays et territoires où une loi a été adoptée ou trouvée, ainsi que les fiches pays ont été vérifiées auprès des sources le 17.11.2026. Données de la carte en format lisible par machine : <a href=\"laws.fr.json\">laws.fr.json</a>. Les territoires que la carte de base dessine à part, comme le Groenland, Porto Rico ou la Nouvelle-Calédonie, indiquent la loi qui s’y applique.",
+    "notes": "Toutes les fiches détaillées sous forme de liste",
+    "version": "version de",
+    "dla": "aperçu de la loi du pays (DLA Piper)",
+    "hasLaw": "Existe-t-il déjà une loi :",
+    "unctad": "suivi de la CNUCED",
+    "diff": "Différences avec le RGPD, autorité, fuites et transferts :",
+    "regulatorSite": "le site de l’autorité nationale",
+    "where": "Où vérifier :",
+    "more": "Détails",
+    "less": "Réduire",
+    "timeZone": "Pays choisi d’après le fuseau horaire de votre appareil. Choisissez-en un autre sur la carte ou dans la liste.",
+    "loadFailed": "La carte ne s’est pas chargée. La liste des pays ci-dessous contient les mêmes données."
+  },
+  "outside": {
+    "title": "Si votre équipe ou votre entreprise est hors de l’UE",
+    "items": [
+      "<b>Vérifiez si le pays bénéficie d’une décision d’adéquation de l’UE.</b> Si oui (Suisse, Royaume-Uni, Japon, etc.), les données circulent comme au sein de l’UE. Sinon, il faut un outil de l’art. 46, en général des CCT et une analyse d’impact du transfert (TIA). [données https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en]",
+      "<b>Prestataire ou votre propre produit.</b> Un sous-traitant d’un client de l’UE paie surtout pour un DPA, des CCT et la sécurité. Votre propre produit pour des personnes dans l’UE ajoute un <a href=\"#rep\">représentant au titre de l’art. 27</a> et toutes les obligations du responsable du traitement. [déduction https://gdpr-info.eu/art-3-gdpr/]"
+    ],
+    "adequacyList": "liste des décisions d’adéquation",
+    "countries": "Les particularités de chaque pays, y compris les transferts vers une équipe sur place, sont sur la <a href=\"#map\">carte</a>."
+  },
+  "representative": {
+    "title": "Représentant dans l’UE au titre de l’art. 27 : ce que c’est, quand il en faut un, combien il coûte",
+    "what": {
+      "title": "Ce que c’est",
+      "items": [
+        "Une personne ou une entreprise dans un pays de l’UE qu’un opérateur établi hors de l’UE désigne par écrit comme son interlocuteur pour les autorités et les personnes (art. 4(17), 27). Le représentant est établi dans un pays où se trouvent vos utilisateurs (art. 27(3)). [données https://gdpr-info.eu/art-27-gdpr/]",
+        "Il reçoit les demandes et les courriers, présente le registre des traitements (art. 30) à la demande de l’autorité et vous transmet tout. Vos obligations et votre responsabilité ne lui sont pas transférées (art. 27(5)). [données https://gdpr-info.eu/art-27-gdpr/]"
+      ]
+    },
+    "when": {
+      "title": "Quand il en faut un",
+      "items": [
+        "Si vous n’avez pas d’établissement dans l’UE et que le RGPD vous concerne via l’art. 3(2) : vous proposez des services à des personnes dans l’UE ou suivez leur comportement. [données https://gdpr-info.eu/art-3-gdpr/]",
+        "Inutile seulement si le traitement est à la fois occasionnel, sans traitement à grande échelle de catégories particulières ou de données pénales, et peu susceptible d’engendrer un risque (art. 27(2)). Un service fondé sur des réponses sensibles n’entre généralement pas dans cette exemption. [déduction https://gdpr-info.eu/art-27-gdpr/]",
+        "La loi suisse n’exige un représentant que des opérateurs étrangers (nLPD art. 14) ; un opérateur suisse n’en a donc pas besoin pour ses utilisateurs en Suisse. [données https://prighter.com/resources/laws/swiss-fadp/fadp/articles/article-14]"
+      ]
+    },
+    "cost": {
+      "title": "Ce qu’il coûte et ce qui se passe sans lui",
+      "items": [
+        "Tarifs publics en novembre 2026 : les moins chers <b class=\"num\">490–600 €</b> par an, les offres intermédiaires <b class=\"num\">1 000–2 500 €</b>, les offres haut de gamme jusqu’à <b class=\"num\">environ 4 750 €</b>. [données https://www.dpo-consulting.com/gdpr-representative-basic]",
+        "Une connaissance dans l’UE peut aussi être votre représentant, mais les courriers des autorités et les réclamations des personnes lui seront adressés. [déduction https://gdpr-info.eu/art-27-gdpr/]",
+        "La première amende précisément pour absence de représentant : <b class=\"num\">525 000 €</b>, Pays-Bas, 2021 (Locatefamily.com), plus <b class=\"num\">20 000 €</b> pour chaque période de deux semaines de retard, plafonnée à <b class=\"num\">120 000 €</b>. [données https://autoriteitpersoonsgegevens.nl/nl/nieuws/boete-van-525000-euro-voor-locatefamilycom]"
+      ]
+    },
+    "sources": "Prix issus des grilles tarifaires publiques de six prestataires au 17.11.2026, sans recommander d’entreprise en particulier. <a href=\"https://autoriteitpersoonsgegevens.nl/nl/nieuws/boete-van-525000-euro-voor-locatefamilycom\">L’autorité néerlandaise sur l’amende Locatefamily.com</a>, <a href=\"https://eur-lex.europa.eu/eli/reg/2016/679/oj\">texte du RGPD</a>, <a href=\"https://www.fedlex.admin.ch/eli/cc/2022/491/en\">nLPD</a>"
+  },
+  "prices": {
+    "title": "Coût par an, € [données https://www.legiscope.com/blog/gdpr-compliance-cost-sme.html]",
+    "lead": "Prix fournis par des entreprises qui vendent elles-mêmes ces services. Les estimations « tout compris » viennent d’un fournisseur sans méthode publiée. Échelle logarithmique.",
+    "ranges": [
+      {
+        "title": "DPO externe, jusqu’à 20 salariés",
+        "note": "33–150 € par mois"
+      },
+      {
+        "title": "DPO externe, 20–50 salariés",
+        "note": "125–350 € par mois"
+      },
+      {
+        "title": "DPO externe, 50–250 salariés",
+        "note": "350–900 € par mois"
+      },
+      {
+        "title": "Représentant dans l’UE, art. 27",
+        "note": "de 490 € par an aux offres haut de gamme"
+      },
+      {
+        "title": "Tout compris, 10 salariés",
+        "note": "logiciels, DPO, consultants, heures de l’équipe"
+      },
+      {
+        "title": "Dont les heures de votre propre équipe",
+        "note": "avec 10 salariés"
+      },
+      {
+        "title": "Tout compris, 50 salariés"
+      }
+    ],
+    "side": [
+      "<b>800–2 000 €</b>une journée de consultant",
+      "<b>1 500–5 000 €</b>audit initial ponctuel, 10–250 salariés",
+      "<b>à partir de 11 500 $</b>par an pour un audit SOC 2 chez un prestataire, si un client l’exige"
+    ],
+    "sources": "<a href=\"https://www.kertos.io/en/compliance-hub/costs-external-dpo-gdpr\">Kertos, 6.10.2026</a>, <a href=\"https://www.dpo-consulting.com/gdpr-representative-basic\">DPO Consulting</a>, <a href=\"https://cipherssecurity.com/gdpr-compliance-us-saas-2026/\">tarifs Prighter</a>, <a href=\"https://www.legiscope.com/blog/gdpr-compliance-cost-sme.html\">Legiscope, 8.07.2026</a>, <a href=\"https://www.g2.com/products/eu-shield/pricing\">G2</a>"
+  },
+  "risks": {
+    "title": "Ce qu’entraîne une erreur, au-delà de l’amende [données https://jonesday.com/en/insights/2023/05/cjeu-clarifies-the-right-to-compensation-for-gdpr-infringements-causing-nonmaterial-damage]",
+    "verdicts": [
+      {
+        "title": "Mesure correctrice",
+        "text": "L’autorité peut interdire un traitement, ordonner la suppression de données, suspendre un transfert (art. 58(2))."
+      },
+      {
+        "title": "Action d’une personne",
+        "text": "Indemnisation du préjudice moral sans seuil de gravité ; le préjudice doit tout de même être prouvé (C-300/21, 2023)."
+      },
+      {
+        "title": "Action d’un concurrent",
+        "text": "Les pays de l’UE peuvent permettre aux concurrents d’agir en justice contre des violations du RGPD au titre de la concurrence déloyale (C-21/23, 2024). L’Allemagne le permet déjà."
+      },
+      {
+        "title": "Ventes perdues",
+        "text": "Un client professionnel ne signera pas sans DPA ni réponses sur la sécurité. [déduction https://curia.europa.eu/site/upload/docs/application/pdf/2024-10/cp240159en.pdf]"
+      }
+    ],
+    "sources": "<a href=\"https://jonesday.com/en/insights/2023/05/cjeu-clarifies-the-right-to-compensation-for-gdpr-infringements-causing-nonmaterial-damage\">Jones Day sur C-300/21</a>, <a href=\"https://curia.europa.eu/site/upload/docs/application/pdf/2024-10/cp240159en.pdf\">La CJUE sur C-21/23</a>, <a href=\"https://www.taylorwessing.com/en/insights-and-events/insights/2025/03/bgh-lindenapotheke\">BGH 2025</a>"
+  },
+  "checks": {
+    "title": "Comment fonctionnent les contrôles",
+    "lead": "Personne ne contrôle à l’avance. Une autorité apprend votre existence de l’une de trois façons. [données https://rgpd.com/gdpr/chapter-8-remedies-liability-and-penalties/article-77-right-to-lodge-a-complaint-with-a-supervisory-authority]",
+    "inputs": [
+      "<b>La plainte d’une personne</b>art. 77, gratuitement, auprès de l’autorité du pays de résidence, de travail ou de l’infraction. Pas besoin de prouver l’infraction au préalable.",
+      "<b>Votre propre notification de fuite</b>Knuddels a signalé lui-même un piratage ; l’enquête a trouvé des mots de passe stockés en clair.",
+      "<b>Initiative de l’autorité</b>Actions coordonnées du CEPD ; le thème de 2026 est la transparence et l’information."
+    ],
+    "flow": [
+      "<b>Demande</b>une lettre de questions",
+      "<b>Réponse</b>documents et explications",
+      "<b>Décision</b>mise en demeure, rappel à l’ordre ou amende",
+      "<b>Tribunal</b>recours contre la décision"
+    ],
+    "parallel": "<b>En parallèle :</b> une personne peut assigner l’entreprise directement (art. 79, 82) sans attendre l’autorité. Si l’autorité ne donne aucune nouvelle d’une plainte pendant 3 mois, on peut poursuivre l’autorité elle-même (art. 78). Des ONG comme noyb déposent des plaintes au nom des personnes (art. 80).",
+    "note": "À partir du 2 avril 2027, les affaires transfrontalières auront des délais contraignants (règlement 2025/2518).",
+    "sources": "<a href=\"https://rgpd.com/gdpr/chapter-8-remedies-liability-and-penalties/article-77-right-to-lodge-a-complaint-with-a-supervisory-authority\">art. 77</a>, <a href=\"https://digitalhorizon.hannessnellman.com/digital-privacy/gdpr/chapter-viii-remedies-liability-and-penalties/\">art. 78–80</a>, <a href=\"https://www.jdsupra.com/legalnews/germany-announces-that-it-is-not-33034\">Knuddels</a>, <a href=\"https://cms.law/en/int/publication/GDPR-Enforcement-Tracker-Report/executive-summary\">CMS</a>, <a href=\"https://www.matheson.com/insights/new-era-for-cross-border-gdpr-enforcement-what-the-gdpr-procedural-regulation-means-in-practice/\">Matheson</a>"
+  },
+  "cases": {
+    "title": "Amendes modestes [données https://www.enforcementtracker.com/ETid-1]",
+    "items": [
+      "<b>Autriche, 2018.</b> Un point de paris filmait le trottoir et le parking sans panneau de vidéosurveillance.",
+      "<b>Allemagne, 2018.</b> Le chat Knuddels stockait les mots de passe en clair. Selon l’autorité, les données d’environ 330 000 utilisateurs ont été volées ; d’autres sources avancent des chiffres plus élevés. Le montant a été réduit pour une coopération rapide.",
+      "<b>Allemagne, 2019, un particulier.</b> Un e-mail où tous les destinataires voyaient les adresses des autres.",
+      "<b>Particuliers.</b> Au moins 65 amendes à la date d’octobre 2022, surtout pour des caméras chez soi et des photos d’autrui sur les réseaux sociaux."
+    ]
+  },
+  "who": {
+    "title": "Qui est sanctionné et pourquoi [déduction https://cms.law/en/int/publication/GDPR-Enforcement-Tracker-Report/executive-summary]",
+    "small": "<b>Petites entreprises et particuliers</b>De quelques centaines à quelques dizaines de milliers d’euros. Caméras, envois sans consentement, une lettre au mauvais destinataire, aucune information pour les personnes, une sécurité faible révélée par une fuite.",
+    "big": "<b>Big Tech</b>Des centaines de millions d’euros. Transferts de données hors de l’UE, publicité sans base légale, données d’enfants."
+  },
+  "stats": {
+    "title": "Statistiques CMS au 1er mars 2026 [données https://cms.law/en/deu/publication/GDPR-Enforcement-Tracker-Report/numbers-and-figures]",
+    "items": [
+      "amendes avec des données complètes",
+      "publiées par l’Espagne",
+      "amende moyenne, fortement tirée vers le haut par les plus élevées"
+    ],
+    "averageFine": "2,28 M€",
+    "note": "Le motif le plus fréquent est un traitement sans base légale. Le commerce et les télécoms sont en tête par nombre d’amendes. Les statistiques sont incomplètes : certains pays publient des amendes de quelques centaines d’euros, d’autres seulement les grosses."
+  },
+  "skills": {
+    "title": "Faites vérifier votre produit selon cette page : une phrase suffit à votre agent IA",
+    "lead": "Trois skills ouverts lisent votre code, suivent chaque flux de données personnelles jusqu’au fichier et à la ligne, déterminent les lois applicables et apportent des correctifs prêts à l’emploi. Ils n’envoient, ne suppriment rien et ne font aucun commit sans votre « oui ».",
+    "github": "Ouvrir sur GitHub",
+    "install": "Installer",
+    "copy": "Copier",
+    "note": "Fonctionne avec Claude Code, Codex, Gemini CLI, GitHub Copilot et Cursor. Dans Claude.ai, téléversez chaque dossier de <code>skills/</code> dans les paramètres, section Skills. Licence MIT.",
+    "chat": {
+      "label": "La réponse de l’agent IA avec les skills",
+      "question": "Vérifie journal-app au regard du RGPD et de la nLPD, elle est déjà en ligne.",
+      "answer": [
+        "<b>Incident possible.</b> Les entrées du journal et les photos sont ouvertes à des inconnus. Fermez d’abord l’accès (correctif n° 1), puis vérifiez les journaux.",
+        "<b>Vérifié :</b> 21 fichiers depuis git, analyse statique uniquement.",
+        "<b>Lois :</b> nLPD et RGPD art. 3(2)(a) : l’inscription propose la Suisse et l’Allemagne <i>[code: signup/page.tsx:34]</i> <i>[inference]</i>.",
+        "<b>Principaux constats :</b>",
+        "Appliquer le correctif n° 1 ?"
+      ],
+      "findings": [
+        "<b>Bloquant.</b> La table <code>ai_reflections</code> n’a pas de RLS <i>[code: init.sql:42]</i>",
+        "<b>Bloquant.</b> Tout utilisateur connecté lit les entrées des autres <i>[code: init.sql:33]</i>",
+        "<b>Bloquant.</b> Le bucket de photos est public <i>[code: storage.sql:2]</i>"
+      ],
+      "caption": "D’après une réponse du test à l’aveugle, abrégée. Le rapport complet, avec tableaux et correctifs, va dans un document privé."
+    },
+    "pipeline": {
+      "label": "Comment les skills fonctionnent ensemble",
+      "you": {
+        "title": "Vous écrivez",
+        "text": "« vérifie le projet au regard du RGPD »"
+      },
+      "director": "comprend la demande, tient l’échelle de gravité et les règles de sécurité",
+      "audit": "trouve les données dans le code",
+      "jurisdictions": "détermine les lois applicables",
+      "report": {
+        "title": "Rapport",
+        "text": "un résumé dans le chat, le rapport complet dans un document, les correctifs un par un"
+      }
+    },
+    "proof": [
+      {
+        "value": "12",
+        "text": "types de problèmes qu’il traque, du suivi avant consentement aux secrets dans l’historique git"
+      },
+      {
+        "value": "9",
+        "text": "scénarios, de l’audit de code à la fuite de données ou à la demande d’effacement"
+      },
+      {
+        "value": "11",
+        "text": "juridictions avec des liens vers les textes officiels ; les autres pays via le registre des autorités"
+      },
+      {
+        "value": "fichier:ligne",
+        "text": "pour chaque constat, avec un correctif prêt pour les points bloquants"
+      }
+    ],
+    "fine": "Comment les skills ont été testés sur des dépôts de test : voir le <a href=\"https://github.com/stevedevhere/privacy-for-builders#testing\">README</a>. Les skills fournissent des constats et des brouillons ; la décision vous appartient.",
+    "copied": "Copié",
+    "copyFailed": "Sélectionnez et copiez"
+  },
+  "footer": {
+    "sources": "Toutes les sources de la page ({count})",
+    "sourcesNote": "Chaque badge « données » et « déduction » de la page renvoie à sa propre source. Elles sont toutes réunies ici.",
+    "disclaimer": "Une explication du droit, pas l’avis d’un avocat sur un cas précis. Les prix proviennent des pages des prestataires et peuvent varier selon votre situation."
+  }
+}

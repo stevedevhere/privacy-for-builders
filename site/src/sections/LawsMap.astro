@@ -1,0 +1,116 @@
+---
+import { LANGS, langOf, useText } from '../i18n';
+import { CLASS_ORDER, countByClass, loadLaws } from '../data/laws';
+import Tile from '../components/Tile.astro';
+import mapUrl from '../assets/map/map.svg?url';
+import zonesUrl from '../assets/map/tz.json?url';
+
+// Files the map script fetches get a content hash in their name, so a new build is never read from an old cached copy.
+// laws.json, laws.fr.json, … stay published under fixed names for reuse (pages/[file].json.ts).
+const lawsUrls = import.meta.glob<string>('../data/laws/*.json', { query: '?url', import: 'default', eager: true });
+
+/** The world map loads with its data when the Laws tab opens (scripts/laws-map.ts); the list and notes below work without it. */
+const lang = langOf(Astro.url);
+const { t, get, html } = useText(lang);
+const laws = loadLaws(lang);
+const counts = countByClass(laws);
+const countries = Object.entries(laws.countries).sort(([, a], [, b]) => a.n.localeCompare(b.n, lang));
+const scriptText = {
+  ...get<Record<string, string>>('map'),
+  evidence: get('evidence'),
+  laws: lawsUrls[`../data/laws/${lang}.json`],
+  lawsByLang: Object.fromEntries(LANGS.map((l) => [l, lawsUrls[`../data/laws/${l}.json`]])),
+  svg: mapUrl,
+  zones: zonesUrl,
+};
+---
+<Tile span={12} id="map" title={t('map.title')}>
+  <p class="muted lead" set:html={t('map.lead')} />
+  <div class="mapwrap" data-laws-map>
+    <script type="application/json" data-map-text set:html={JSON.stringify(scriptText)} />
+    <div class="mapcol">
+      <div class="mapbox"><div class="world-slot"><p class="muted">{get('map.loading')}</p></div></div>
+      <ul class="mlegend" aria-label={get('map.legend')}>
+        {CLASS_ORDER.map((c) => (
+          <li>
+            <button type="button" class="lg" data-c={c} aria-pressed="false">
+              <i class={`sw k-${c}`}></i>{laws.cls[c].name}{counts[c] > 1 && <span class="num">{counts[c]}</span>}
+            </button>
+          </li>
+        ))}
+      </ul>
+      <details class="country" id="refs">
+        <summary>{get('map.notes')}</summary>
+        <div class="refs">
+          {Object.entries(laws.info).map(([key, note]) => (
+            <article class="refc" id={`law-${key.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+              <h4>{note.t}</h4>
+              <p set:html={html(note.s)} />
+              <ul>{note.d.map((line) => <li set:html={html(line)} />)}</ul>
+            </article>
+          ))}
+        </div>
+      </details>
+    </div>
+    <aside class="mpanel" aria-live="polite">
+      <label class="pick">
+        <span>{get('map.country')}</span>
+        <select data-map-pick>
+          <option value="">{get('map.pick')}</option>
+          {countries.map(([key, c]) => <option value={key}>{c.n}</option>)}
+        </select>
+      </label>
+      <div data-map-body>
+        <div class="m-empty">
+          <svg aria-hidden="true" class="m-circles" viewBox="0 0 140 84"><circle cx="52" cy="42" r="34"></circle><circle cx="88" cy="36" r="26"></circle><circle cx="84" cy="58" r="18"></circle></svg>
+          <p class="muted">{get('map.empty')}</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <p class="src" set:html={t('map.sources')} />
+</Tile>
+
+<style is:global>
+  .mapwrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;margin-top:10px;align-items:start}
+  .mapcol{min-width:0}
+  .mapbox{background:var(--paper);border-radius:10px;padding:8px}
+  .world-slot{aspect-ratio:960/470;display:flex;align-items:center;justify-content:center}
+  .world-slot>svg{display:block;width:100%;height:auto}
+  .world path,.world circle{stroke:var(--sheet);stroke-width:.5;cursor:pointer;transition:opacity .15s}
+  .world circle{stroke-width:1.2}
+  .world .sel{stroke:var(--ink);stroke-width:1.6}
+  .world.dim [data-k]:not(.on){opacity:.18}
+  @media (hover:hover){.world [data-k]:hover{opacity:.75}}
+  .k-g{--k:var(--accent)} .k-a{--k:#1F9D6A} .k-u{--k:#D08A1C}
+  .k-l{--k:light-dark(#8C9AB8,#5E6C8C)} .k-p{--k:light-dark(#B7BFCD,#3A4458)} .k-n{--k:light-dark(#E2E6EC,#262E3D)}
+  .world [class*="k-"]{fill:var(--k)}
+  .sw{background:var(--k)}
+  .mlegend{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+  .mlegend li{margin:0}
+  .lg{font:inherit;font-size:.8rem;display:inline-flex;align-items:center;gap:6px;background:var(--sheet);border:1px solid var(--rule);border-radius:999px;padding:5px 10px;color:var(--ink);cursor:pointer;min-height:32px}
+  .lg[aria-pressed="true"]{border-color:var(--ink);background:var(--paper)}
+  .lg .num{color:var(--ink-3)}
+  .sw,.mpanel .cls i{display:inline-block;width:10px;height:10px;border-radius:3px;flex:none}
+  .mpanel{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;font-size:.88rem;min-height:220px}
+  .pick{display:grid;gap:4px;font-size:.76rem;color:var(--ink-3);font-weight:600;margin-bottom:10px}
+  .pick select{width:100%;min-width:0;font:inherit;font-size:.9rem;font-weight:400;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 10px;min-height:40px}
+  .mpanel h4{font-size:1rem;margin:0 0 4px}
+  .mpanel .cls{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--ink-2);margin-bottom:6px}
+  .mpanel .cls i{background:var(--k)}
+  .mpanel .law{color:var(--ink-2);margin:4px 0}
+  .mpanel button.more{font:inherit;font-size:.84rem;font-weight:600;background:none;border:1px solid var(--rule);border-radius:999px;padding:6px 12px;margin-top:6px;color:var(--ink);cursor:pointer;min-height:36px}
+  .mpanel button.more:hover{border-color:var(--accent)}
+  .mpanel ul{padding-left:1.1rem}
+  .mpanel .where{font-size:.8rem;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:8px;margin-top:10px}
+  .m-empty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:12px 0}
+  .m-circles{width:140px;height:auto}
+  .m-circles circle{fill:var(--accent);fill-opacity:.08;stroke:var(--accent);stroke-opacity:.35}
+  .m-circles circle:nth-child(2){fill:var(--mark);fill-opacity:.25;stroke:var(--mark-ink);stroke-opacity:.2}
+  .tz-note{font-size:.76rem;color:var(--ink-3);margin:0 0 6px}
+  .refs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:8px}
+  .refc{border:1px solid var(--rule);border-radius:10px;padding:12px 14px;font-size:.85rem;min-width:0}
+  .refc h4{font-size:.86rem}
+  @media (max-width:1000px){.mapwrap{grid-template-columns:minmax(0,1fr)}.mapcol{display:contents}.mapbox{order:1}.mpanel{order:2}.mlegend{order:3}#refs{order:4}.refs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:620px){.refs{grid-template-columns:minmax(0,1fr)}.mpanel{min-height:0}}
+</style>

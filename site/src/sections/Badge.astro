@@ -1,0 +1,20 @@
+---
+import { langOf, useText } from '../i18n';
+import Tile from '../components/Tile.astro';
+import Verdicts from '../components/Verdicts.astro';
+
+const { t, get } = useText(langOf(Astro.url));
+---
+<Tile span={4} id="badge" title={t('badge.title')} class="pairs-on-tablet">
+  <Verdicts items={get('badge.verdicts')} tones={['no', 'no', 'mid', 'yes']} />
+  <p class="src" set:html={t('badge.sources')} />
+</Tile>
+
+<style is:global>
+  #badge .verdict{font-size:.86rem;padding-top:8px;padding-bottom:8px}
+  /* on a tablet the tile spans the row and its verdicts go two by two */
+  @media (max-width:1000px) and (min-width:701px){
+    .pairs-on-tablet{grid-column:span 12;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:10px;align-content:start}
+    .pairs-on-tablet>h3,.pairs-on-tablet>.src{grid-column:1/-1}
+  }
+</style>

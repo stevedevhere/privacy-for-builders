@@ -1,0 +1,24 @@
+---
+/** A bento tile. `span` is its width out of 12 columns on desktop; the heading is HTML from the dictionary. */
+interface Props {
+  span: 4 | 5 | 6 | 7 | 8 | 12;
+  title?: string;
+  id?: string;
+  class?: string;
+}
+const { span, title, id, class: className } = Astro.props;
+const headingId = id && title ? `${id}-h` : undefined;
+---
+<section class:list={['t', `c${span}`, className]} id={id} aria-labelledby={headingId}>
+  {title && <h3 id={headingId} set:html={title} />}
+  <slot />
+</section>
+
+<style is:global>
+  .t{background:var(--sheet);border:1px solid var(--rule);border-radius:16px;padding:20px 24px;min-width:0;scroll-margin-top:64px}
+  .c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:span 12}
+  @media (max-width:1000px){.c4,.c5,.c6,.c7{grid-column:span 6}.c8{grid-column:span 12}}
+  /* a tile that would end up alone in a two-column row takes the whole row */
+  @media (max-width:1000px) and (min-width:701px){.t.wide-on-tablet{grid-column:span 12}}
+  @media (max-width:700px){.bento>*{grid-column:span 12!important}}
+</style>

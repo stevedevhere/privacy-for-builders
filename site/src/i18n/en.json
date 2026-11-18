@@ -1,0 +1,559 @@
+{
+  "meta": {
+    "title": "GDPR in practice: cost, checks, fines",
+    "description": "GDPR and other personal data laws in practice: data categories, when to start on privacy at each product stage, a map of laws by country, the EU representative, costs, checks and fines. Sources and inferences are marked.",
+    "ogDescription": "Data categories, product stages, a map of laws by country, the EU representative, costs, checks and fines.",
+    "lawsDataTitle": "Personal data laws by country (map data)",
+    "summaryTitle": "Page summary in Markdown",
+    "about": [
+      "GDPR",
+      "Swiss nFADP",
+      "UK GDPR",
+      "personal data protection",
+      "EU representative under Article 27"
+    ],
+    "ldDescription": "What counts as GDPR compliance, which data needs which regime, when to start on privacy at each product stage, which law applies in which country, what it costs, who checks and who gets fined.",
+    "datasetName": "Personal data laws by country",
+    "datasetDescription": "Law class for 186 countries and territories: GDPR, own law with EU adequacy, own law, US, draft, no law; short and detailed differences from GDPR for key countries.",
+    "codeDescription": "Skills for AI agents: auditing a product for GDPR, nFADP and other laws."
+  },
+  "evidence": {
+    "data": "data",
+    "inference": "inference",
+    "baseline": "baseline",
+    "verify": "verify",
+    "source": "Source:"
+  },
+  "header": {
+    "theme": {
+      "label": "Theme",
+      "auto": "Auto",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "language": "Language",
+    "title": "<span translate=\"no\">GDPR</span> and other data laws, clearly and step by step",
+    "lead": "What the law requires, when to start, which law applies in which country and what it costs. For developers and small products. Checked against sources on 17 November 2026.",
+    "checkProduct": "Check your product",
+    "lawsMap": "Map of laws",
+    "legend": {
+      "data": "stated in a source",
+      "inference": "follows from the sources, not stated outright"
+    }
+  },
+  "tabs": {
+    "label": "Page sections",
+    "main": "Overview",
+    "data": "Data",
+    "start": "When to start",
+    "laws": "Laws by country",
+    "money": "Money and risk",
+    "tools": "Skills",
+    "next": "Next:"
+  },
+  "hero": {
+    "title": "You can’t “get” compliance. It is a state you must be able to prove at any moment",
+    "lead": "There is no license, registration or mandatory certificate. You pay for four things to exist and to match reality.",
+    "pillars": [
+      "<b>Legal basis</b>for every purpose of processing",
+      "<b>Documents</b>records, privacy policy, DPAs; a DPIA when risk is high",
+      "<b>Rights</b>access, erasure, export within a month",
+      "<b>Security</b>and a 72-hour plan for a breach"
+    ],
+    "applies": {
+      "title": "When GDPR starts to apply to you",
+      "text": "If you have an establishment in the EU, deliberately offer goods or services to people in the EU, or monitor their behavior there (Art. 3). Then one customer is enough. A chance visitor from the EU does not bring you in, as long as you neither target the EU nor track people there. There is no exemption for small companies. [data https://gdpr-info.eu/art-3-gdpr/]"
+    },
+    "urgent": {
+      "title": "When it becomes urgent [inference https://gdpr-info.eu/art-28-gdpr/]",
+      "items": [
+        "your first B2B customer in the EU sends a DPA and a security questionnaire;",
+        "pixels and analytics on EU traffic;",
+        "special-category data or children’s data;",
+        "your first breach."
+      ]
+    },
+    "stagesLink": "Stage by stage"
+  },
+  "badge": {
+    "title": "The “GDPR compliant” badge",
+    "verdicts": [
+      {
+        "title": "Your own badge",
+        "text": "There is not and never was an official EU logo. A home-made badge has no legal weight. [data https://www.complyjet.com/blog/gdpr-logo]"
+      },
+      {
+        "title": "“Certified” without a certificate",
+        "text": "Misleading: in Luxembourg, a “CNPD certified” label without a valid GDPR-CARPA certificate is treated as exactly that. [data https://luxgap.com/lois/rgpd/cons-100/?lang=en]"
+      },
+      {
+        "title": "Certificate under Art. 42",
+        "text": "Europrivacy and others: voluntary, only through an accredited body, covers the listed operations rather than the whole company. EDPB: a certificate does not mean full compliance. [data https://www.clym.io/blog/edpb-approves-first-european-data-protection-seals-what-it-means-for-your-gdpr-compliance]"
+      },
+      {
+        "title": "What actually works",
+        "text": "A DPA, a list of subprocessors and a description of security measures: that is what a customer will ask for. [inference https://gdpr-info.eu/art-28-gdpr/]"
+      }
+    ],
+    "sources": "<a href=\"https://www.complyjet.com/blog/gdpr-logo\">ComplyJet</a>, <a href=\"https://luxgap.com/lois/rgpd/cons-100/?lang=en\">Luxgap</a>, <a href=\"https://captaincompliance.com/education/croatias-dpa-explains-gdpr-certification-what-a-seal-proves-and-what-it-does-not/\">Croatian DPA</a>, <a href=\"https://www.clym.io/blog/edpb-approves-first-european-data-protection-seals-what-it-means-for-your-gdpr-compliance\">Clym on the EDPB</a>"
+  },
+  "summary": {
+    "data": {
+      "title": "Data: the regime depends on the category",
+      "text": "Ordinary data (name, email, IP) needs a legal basis, a clear policy and a retention period. Health, mental state and intimate life usually need explicit consent given as a separate action, and a DPIA; below the age of digital consent, children need a parent’s consent. The most common trap is data from which something sensitive can be inferred: it gets the same strict regime. [data https://connectontech.bakermckenzie.com/sensitive-data-under-the-cjeus-spotlight-practical-implications/]",
+      "link": "All categories and an example breakdown"
+    },
+    "start": {
+      "title": "When to start",
+      "items": [
+        "<b>Prototype for yourself</b> — plan the architecture, the law is nearly silent",
+        "<b>Closed beta</b> — an honest text, consent, deletion",
+        "<b>Public launch</b> — a full policy, DPAs, a breach plan",
+        "<b>Money and B2B</b> — contracts, a DPA template, security measures"
+      ],
+      "link": "All stages in detail"
+    },
+    "laws": {
+      "title": "Laws by country",
+      "items": [
+        "<b class=\"num\">{g}</b>EU and EEA countries run on GDPR",
+        "<b class=\"num\">{a}</b>have their own law and an EU adequacy decision",
+        "<b class=\"num\">{l}</b>have their own general data law"
+      ],
+      "link": "Open the map"
+    },
+    "money": {
+      "title": "Money and risk",
+      "items": [
+        "<b class=\"num\">from €490</b>a year: EU representative",
+        "<b class=\"num\">from €33</b>a month: external DPO",
+        "<b class=\"num\">€2,500</b>fine for a private person who emailed a group with every address visible"
+      ],
+      "link": "Costs, checks and fines"
+    },
+    "tools": {
+      "title": "Check your product",
+      "text": "Three open skills for AI agents run your code through this logic: they find personal data down to the file and line and propose fixes.",
+      "link": "Skills for AI agents"
+    }
+  },
+  "categories": {
+    "title": "Data categories and what each one needs",
+    "lead": "The regime depends on what exactly you process, and one app almost always handles several categories at once. The square next to the risk level shows it in color. Fines have two tiers: up to €20 million or 4% of worldwide turnover, whichever is higher, and up to €10 million or 2% (Art. 83). [data https://eur-lex.europa.eu/eli/reg/2016/679/oj]",
+    "need": "What you need",
+    "cost": "Cost of a mistake",
+    "items": {
+      "ordinary": {
+        "title": "Ordinary personal data <small>Art. 4(1), 6</small>",
+        "level": "medium risk",
+        "example": "Name, email, IP, device ID, cookie ID, activity history.",
+        "need": "One of 6 legal bases per purpose, a privacy policy, a retention period, DPAs with contractors, user rights.",
+        "cost": "<span class=\"risk mid\">up to 4%</span>legal bases and principles; <span class=\"risk lo\">up to 2%</span>security and documentation."
+      },
+      "special": {
+        "title": "Special categories <small>Art. 9</small>",
+        "level": "high risk",
+        "example": "Health, including mental health; sex life and orientation; biometrics for identification; genetics; ethnic origin; religion; politics; trade union membership.",
+        "need": "A basis from Art. 6 plus an exception from Art. 9(2), for apps usually explicit consent given as a separate action. DPIA, encryption, no third-party trackers nearby.",
+        "cost": "<span class=\"risk hi\">up to 4%</span>a breach is almost always “high risk”: notify the people themselves."
+      },
+      "inferred": {
+        "title": "Indirectly sensitive <small>EU Court of Justice case law</small>",
+        "level": "high risk",
+        "example": "Data from which something sensitive can be inferred: a partner’s name (OT case, 2022), a medicine order (Lindenapotheke, 2024).",
+        "need": "The same regime as Art. 9. Intent and accuracy of the inference do not matter. [data https://connectontech.bakermckenzie.com/sensitive-data-under-the-cjeus-spotlight-practical-implications/]",
+        "cost": "<span class=\"risk hi\">up to 4%</span>the most common trap: assuming that if you never ask about health directly, there are no special categories. [inference https://gdpr-info.eu/art-9-gdpr/]"
+      },
+      "children": {
+        "title": "Children’s data <small>Art. 8</small>",
+        "level": "elevated risk",
+        "example": "Users below the age of digital consent: 16 by default, countries lower it to 13. For example: Germany, Ireland, the Netherlands 16; France 15; Austria, Spain, Italy 14; Belgium, Denmark 13.",
+        "need": "If you rely on consent: a parent’s consent and a reasonable check. Text children can understand, privacy by default.",
+        "cost": "<span class=\"risk lo\">up to 2%</span>under Art. 8; in practice fined together with breaches of principles, and then up to 4% (TikTok, Instagram)."
+      },
+      "profiling": {
+        "title": "Profiling <small>Art. 4(4), 21, 22</small>",
+        "level": "elevated risk",
+        "example": "Automated evaluation of personality, behavior, preferences: scoring, types, predictions.",
+        "need": "Explain the logic in the privacy policy, give a right to object. A decision with significant effects and no human involved is allowed only under a contract, law or explicit consent. In Switzerland “high-risk profiling” requires express consent.",
+        "cost": "<span class=\"risk mid\">up to 4%</span>data-subject rights are in the upper tier."
+      },
+      "pseudonymous": {
+        "title": "Pseudonymous and anonymous <small>Art. 4(5), recital 26</small>",
+        "level": "lower risk",
+        "example": "Pseudonymous: the key is kept separately, e.g. a hashed email. Anonymous: no reasonable means can single the person out.",
+        "need": "Pseudonymous data remains personal data, just with less risk. Anonymous data falls outside GDPR entirely, but small samples are easy to re-identify.",
+        "cost": "<span class=\"risk mid\">as for the source data</span>if “anonymous” data turns out to be re-identifiable."
+      }
+    },
+    "note": "One more category people rarely think of: data on criminal convictions and offences (Art. 10). A private business may process it only where the law expressly allows.",
+    "sources": "<a href=\"https://connectontech.bakermckenzie.com/sensitive-data-under-the-cjeus-spotlight-practical-implications/\">Baker McKenzie on the OT, Meta and Lindenapotheke cases</a>, <a href=\"https://www.activemind.legal/legislation/gdpr/recital-35\">recital 35</a>, <a href=\"https://gdprlocal.com/dealing-with-childrens-data/\">age of consent by country</a>, <a href=\"https://prighter.com/resources/laws/swiss-fadp/fadp/articles/article-6\">nFADP Art. 6</a>, <a href=\"https://eur-lex.europa.eu/eli/reg/2016/679/oj\">GDPR text</a>"
+  },
+  "example": {
+    "title": "Example breakdown: a psychological test app for two",
+    "lead": "Data logic: a person answers questions about closeness, anxiety, avoidance and attraction; gets a profile on several scales; can invite a second person, and they see a joint result. The operator is in Switzerland, users in Switzerland and the EU, so nFADP and GDPR both apply. The classification below is an inference from the law and EU Court case law. [inference https://gdpr-info.eu/art-9-gdpr/]",
+    "columns": {
+      "data": "What data",
+      "category": "Category",
+      "need": "What you need",
+      "wrong": "If you get it wrong"
+    },
+    "rows": {
+      "anxiety": {
+        "data": "<b>Answers about anxiety, distress, avoidance</b>emotional-state scales",
+        "category": [
+          "special: health"
+        ],
+        "need": "Explicit consent as a separate action before the first question (GDPR Art. 9(2)(a); in Switzerland Art. 6(7)). DPIA. Only the questions you need.",
+        "wrong": "The top fine tier, complaints, compensation claims."
+      },
+      "intimacy": {
+        "data": "<b>Answers about physical intimacy and attraction</b>",
+        "category": [
+          "special: sex life"
+        ],
+        "need": "The same explicit consent. A way to skip a question without breaking the result.",
+        "wrong": "Disclosure to the partner or third parties is a high-risk breach: notify the regulator and the people themselves."
+      },
+      "profile": {
+        "data": "<b>Computed profile</b>type, scale scores, prediction",
+        "category": [
+          "profiling",
+          "inferred special"
+        ],
+        "need": "Explain in plain words in the privacy policy how the result is calculated. In Switzerland this is probably “high-risk profiling”: an assessment of essential aspects of personality, so again express consent.",
+        "wrong": "The profile is more sensitive than the answers themselves: in a breach it is the main harm."
+      },
+      "joint": {
+        "data": "<b>Joint result for two</b>",
+        "category": [
+          "special, data of two people"
+        ],
+        "need": "Consent from each. One person’s answers are not visible to the other without consent. If one deletes their data, their part disappears from the joint result, not just their access.",
+        "wrong": "The second person is a separate data subject with a right to complain and sue. Compensation for non-material damage needs no seriousness threshold (EU Court, C-300/21). [data https://jonesday.com/en/insights/2023/05/cjeu-clarifies-the-right-to-compensation-for-gdpr-infringements-causing-nonmaterial-damage]"
+      },
+      "nonUser": {
+        "data": "<b>Answers about a person who didn’t take the test</b>",
+        "category": [
+          "usually not personal data for the operator"
+        ],
+        "need": "Don’t store the partner’s name, contacts or photo. As long as the operator cannot identify them, it is not their personal data.",
+        "wrong": "A “partner’s name” field turns them into a data subject you must inform under Art. 14."
+      },
+      "technical": {
+        "data": "<b>Device ID, invite link, IP during sync</b>",
+        "category": [
+          "ordinary"
+        ],
+        "need": "Basis: “contract”. Short lifetimes for links and transfer sessions. US hosting: provider’s DPF certification or SCCs.",
+        "wrong": "A guessed link opens someone else’s result: that is already a breach of special-category data."
+      },
+      "age": {
+        "data": "<b>User’s age</b>",
+        "category": [
+          "children"
+        ],
+        "need": "The topic will attract teenagers. Explicit consent to special categories from a minor is doubtful, so set a 16+ or 18+ threshold with age confirmation.",
+        "wrong": "Children plus special categories is the combination regulators fine most readily."
+      }
+    },
+    "callouts": [
+      "<b>What lowers risk the most.</b> Keep answers on the device only and don’t send to the server what the joint result doesn’t need. What the operator doesn’t have, it can’t lose.",
+      "<b>What’s almost free.</b> A consent screen before the test, a clear privacy policy with the operator’s contact, a “delete for both” button, no analytics on question screens.",
+      "<b>A Swiss nuance.</b> For wilful failure to inform, nFADP fines the responsible individual personally, up to CHF 250,000. A company only in exceptional cases."
+    ]
+  },
+  "stages": {
+    "title": "What the law asks at each product stage",
+    "lead": "The law has no threshold by number of people: duties start with the first person who isn’t you. [data https://gdpr-info.eu/art-2-gdpr/] But what a regulator would actually check, and what is cheaper to do right away, depends a lot on the stage. Find your row; sensitive data and money add requirements at any stage. [inference https://cms.law/en/int/publication/GDPR-Enforcement-Tracker-Report/executive-summary]",
+    "items": {
+      "prototype": {
+        "title": "Prototype for yourself",
+        "who": "only your own or made-up data",
+        "cells": [
+          "<b>Already required</b>Almost nothing by law: personal data for purely personal purposes is outside GDPR (Art. 2(2)(c)). [data https://gdpr-info.eu/art-2-gdpr/]",
+          "<b>Do it now while it’s cheap</b>Decide the architecture: what never leaves the device, what is encrypted before sending, which storage region, no third-party analytics. This is the most expensive thing to redo later. [inference https://gdpr-info.eu/art-25-gdpr/]",
+          "<b>Next step when</b>the first other person appears, even a friend."
+        ]
+      },
+      "closedBeta": {
+        "title": "Closed beta with people you know",
+        "who": "up to a few dozen people, invite only",
+        "cells": [
+          "<b>Already required</b>A short honest text: who you are, what you collect, why, where it is stored, how to delete it. Deletion on request. If questions touch health, intimacy or children, explicit consent with a separate checkbox. No secrets in the repository.",
+          "<b>Can wait</b>An EU representative, the full document set, a lawyer. Formally, records of processing are already required with special categories; a short one takes an hour. A complaint from people you know is unlikely, but the harm from a breach is the same. [inference https://gdpr-info.eu/art-30-gdpr/]",
+          "<b>Next step when</b>strangers or a public link appear."
+        ]
+      },
+      "openBeta": {
+        "title": "Open beta or free launch",
+        "who": "anyone can sign up",
+        "cells": [
+          "<b>Already required</b>A full policy: operator and contact, purposes, bases, recipients and countries, retention, rights, where to complain. DPAs with hosting and services. A consent banner if there are optional cookies or analytics. A breach plan and an incident log. Deletion and export.",
+          "<b>If you are outside the EU and users are in the EU</b>A representative under Art. 27 unless the exemption fits (see <a href=\"#rep\">below</a>). For special categories, a DPIA before launch.",
+          "<b>Next step when</b>you start charging money or working with companies."
+        ]
+      },
+      "sensitive": {
+        "title": "Sensitive data, at any stage",
+        "who": "health, mental state, intimacy, children, biometrics",
+        "cells": [
+          "<b>From the first user</b>Explicit consent (GDPR Art. 9(2)(a), nFADP Art. 6(7)), only the questions you need, an age threshold of 16+ or 18+, no data to analytics or AI services without separate consent.",
+          "<b>Before public launch</b>A DPIA (Art. 35) and records of processing. A breach of such data is almost always “high risk”: notify both the regulator and the people.",
+          "<b>What lowers risk the most</b>don’t store the answers on a server, or store only ciphertext you hold no key to. [inference https://gdpr-info.eu/art-34-gdpr/]"
+        ]
+      },
+      "paid": {
+        "title": "Paid product",
+        "who": "subscriptions, purchases",
+        "cells": [
+          "<b>Adds</b>Terms of use and a contract, the payment provider as a separate recipient of data, keeping payment records for the tax period. In Switzerland, selling online needs an Impressum: name, postal address and email (UWG art. 3(1)(s)). [data https://www.kmu.admin.ch/de/die-gesetze-der-schweiz-und-der-eu]",
+          "<b>Next step when</b>your first business customer signs up."
+        ]
+      },
+      "b2b": {
+        "title": "Business customers (B2B)",
+        "who": "you sell to companies",
+        "cells": [
+          "<b>Adds</b>The customer will send a DPA and a security questionnaire. You need your own DPA template, a list of subprocessors with regions and a description of security measures. Without them the deal stalls. [inference https://gdpr-info.eu/art-28-gdpr/]"
+        ]
+      },
+      "growth": {
+        "title": "Growth or incident",
+        "who": "thousands of users, first breach",
+        "cells": [
+          "<b>Adds</b>A DPO if your core activity is large-scale processing of special categories or systematic monitoring (Art. 37). Regular review, an external audit. After a breach, 72 hours to notify under GDPR. [data https://gdpr-info.eu/art-37-gdpr/]"
+        ]
+      }
+    },
+    "example": "Example: the couples test app from the <a href=\"#example\">breakdown below</a>, in a closed beta, matches the “closed beta” and “sensitive data” rows together. Consent, deletion and an honest text are needed now; an EU representative once the app is offered to people in the EU. [inference https://gdpr-info.eu/art-27-gdpr/]"
+  },
+  "map": {
+    "title": "Coverage map: where GDPR applies and where another law does",
+    "lead": "Click a country: first a short note on how it differs from GDPR, then “More” for detail. Small countries are shown as dots; any country can be picked from the list. Clicking a legend item highlights that group. Detailed notes exist for the EU and 29 key countries; for the rest, the name of the law and a link to check the differences.",
+    "imageTitle": "Map: which personal data law applies in each country",
+    "loading": "Loading the map…",
+    "legend": "Map legend",
+    "country": "Country",
+    "frenchGuiana": "French Guiana (France)",
+    "pick": "Pick on the map or here",
+    "empty": "This panel will show which law applies in the selected country and how it differs from GDPR.",
+    "sources": "Classification: the World Privacy Forum table as of June 2024, as republished by <a href=\"https://captaincompliance.com/education/global-data-privacy-laws-a-comprehensive-overview-of-legislation-for-every-country/\">Captain Compliance</a>; EU adequacy decisions: <a href=\"https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en\">European Commission</a>; Brazil’s new adequacy decision, corrections for Chile, Vietnam, Mexico and 13 more countries and territories where a law was adopted or found, and the country notes were checked against sources on 17.11.2026. Map data in machine-readable form: <a href=\"laws.json\">laws.json</a>. Territories the base map draws separately, such as Greenland, Puerto Rico or New Caledonia, show the law that applies there.",
+    "notes": "All detailed notes as a list",
+    "version": "version of",
+    "dla": "country law overview (DLA Piper)",
+    "hasLaw": "Is there a law yet:",
+    "unctad": "UNCTAD tracker",
+    "diff": "Differences from GDPR, regulator, breaches and transfers:",
+    "regulatorSite": "the national regulator’s site",
+    "where": "Where to verify:",
+    "more": "More",
+    "less": "Show less",
+    "timeZone": "Country picked from your device’s time zone. Choose another on the map or in the list.",
+    "loadFailed": "The map did not load. The country list below has the same data."
+  },
+  "outside": {
+    "title": "If your team or company is outside the EU",
+    "items": [
+      "<b>Check whether the country has an EU adequacy decision.</b> If it does (Switzerland, the UK, Japan and others), data flows as within the EU. If not, you need an Art. 46 tool, usually SCCs and a transfer impact assessment (TIA). [data https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en]",
+      "<b>Contractor or your own product.</b> A processor for an EU customer pays mainly for a DPA, SCCs and security. Your own product for people in the EU adds a <a href=\"#rep\">representative under Art. 27</a> and the full controller set. [inference https://gdpr-info.eu/art-3-gdpr/]"
+    ],
+    "adequacyList": "list of adequacy decisions",
+    "countries": "Specifics for each country, including transfers to a team there, are on the <a href=\"#map\">map</a>."
+  },
+  "representative": {
+    "title": "EU representative under Art. 27: what it is, when you need one, what it costs",
+    "what": {
+      "title": "What it is",
+      "items": [
+        "A person or company in an EU country that an operator outside the EU appoints in writing as its contact for regulators and people (Art. 4(17), 27). The representative sits in a country where your users are (Art. 27(3)). [data https://gdpr-info.eu/art-27-gdpr/]",
+        "They receive requests and letters, show the records of processing (Art. 30) when a regulator asks, and pass everything on to you. Your obligations and liability for the data do not move to them (Art. 27(5)). [data https://gdpr-info.eu/art-27-gdpr/]"
+      ]
+    },
+    "when": {
+      "title": "When you need one",
+      "items": [
+        "If you have no establishment in the EU and GDPR applies to you through Art. 3(2): you offer services to people in the EU or monitor their behavior. [data https://gdpr-info.eu/art-3-gdpr/]",
+        "Not needed only if processing is at the same time occasional, excludes large-scale processing of special categories or criminal data, and is unlikely to create risk (Art. 27(2)). A service built on sensitive answers usually does not fit this exemption. [inference https://gdpr-info.eu/art-27-gdpr/]",
+        "Swiss law requires a representative only from foreign operators (nFADP Art. 14), so a Swiss operator does not need one for users in Switzerland. [data https://prighter.com/resources/laws/swiss-fadp/fadp/articles/article-14]"
+      ]
+    },
+    "cost": {
+      "title": "What it costs and what happens without one",
+      "items": [
+        "Public prices as of November 2026: the cheapest <b class=\"num\">€490–600</b> a year, mid-range <b class=\"num\">€1,000–2,500</b>, top tiers up to <b class=\"num\">about €4,750</b>. [data https://www.dpo-consulting.com/gdpr-representative-basic]",
+        "An acquaintance in the EU can also be your representative, but regulators’ letters and people’s claims will go to them. [inference https://gdpr-info.eu/art-27-gdpr/]",
+        "The first fine specifically for having no representative: <b class=\"num\">€525,000</b>, the Netherlands, 2021 (Locatefamily.com), plus <b class=\"num\">€20,000</b> for every two weeks of delay, capped at <b class=\"num\">€120,000</b>. [data https://autoriteitpersoonsgegevens.nl/nl/nieuws/boete-van-525000-euro-voor-locatefamilycom]"
+      ]
+    },
+    "sources": "Prices from the public price lists of six providers as of 17.11.2026, without recommending specific companies. <a href=\"https://autoriteitpersoonsgegevens.nl/nl/nieuws/boete-van-525000-euro-voor-locatefamilycom\">Dutch DPA on the Locatefamily.com fine</a>, <a href=\"https://eur-lex.europa.eu/eli/reg/2016/679/oj\">GDPR text</a>, <a href=\"https://www.fedlex.admin.ch/eli/cc/2022/491/en\">nFADP</a>"
+  },
+  "prices": {
+    "title": "Cost per year, € [data https://www.legiscope.com/blog/gdpr-compliance-cost-sme.html]",
+    "lead": "Prices from companies that sell these services themselves. The “all together” estimates are a vendor’s, with no published method. Logarithmic scale.",
+    "ranges": [
+      {
+        "title": "External DPO, up to 20 employees",
+        "note": "€33–150 a month"
+      },
+      {
+        "title": "External DPO, 20–50 employees",
+        "note": "€125–350 a month"
+      },
+      {
+        "title": "External DPO, 50–250 employees",
+        "note": "€350–900 a month"
+      },
+      {
+        "title": "EU representative, Art. 27",
+        "note": "from €490 a year to top tiers"
+      },
+      {
+        "title": "All together, 10 employees",
+        "note": "software, DPO, consultants, team hours"
+      },
+      {
+        "title": "Of which your own team’s hours",
+        "note": "with 10 employees"
+      },
+      {
+        "title": "All together, 50 employees"
+      }
+    ],
+    "side": [
+      "<b>€800–2,000</b>a consultant’s day",
+      "<b>€1,500–5,000</b>one-off initial audit, 10–250 employees",
+      "<b>from $11,500</b>a year for a SOC 2 audit at one provider, if a customer demands it"
+    ],
+    "sources": "<a href=\"https://www.kertos.io/en/compliance-hub/costs-external-dpo-gdpr\">Kertos, 6.10.2026</a>, <a href=\"https://www.dpo-consulting.com/gdpr-representative-basic\">DPO Consulting</a>, <a href=\"https://cipherssecurity.com/gdpr-compliance-us-saas-2026/\">Prighter prices</a>, <a href=\"https://www.legiscope.com/blog/gdpr-compliance-cost-sme.html\">Legiscope, 8.07.2026</a>, <a href=\"https://www.g2.com/products/eu-shield/pricing\">G2</a>"
+  },
+  "risks": {
+    "title": "What a mistake leads to, besides a fine [data https://jonesday.com/en/insights/2023/05/cjeu-clarifies-the-right-to-compensation-for-gdpr-infringements-causing-nonmaterial-damage]",
+    "verdicts": [
+      {
+        "title": "Corrective order",
+        "text": "The regulator can ban processing, order data deleted, stop a transfer (Art. 58(2))."
+      },
+      {
+        "title": "Claim by a person",
+        "text": "Compensation for non-material damage without a seriousness threshold; the damage must still be proven (C-300/21, 2023)."
+      },
+      {
+        "title": "Claim by a competitor",
+        "text": "EU countries may let competitors sue over GDPR breaches as unfair competition (C-21/23, 2024). Germany already does."
+      },
+      {
+        "title": "Lost deals",
+        "text": "A corporate customer won’t sign without a DPA and answers on security. [inference https://curia.europa.eu/site/upload/docs/application/pdf/2024-10/cp240159en.pdf]"
+      }
+    ],
+    "sources": "<a href=\"https://jonesday.com/en/insights/2023/05/cjeu-clarifies-the-right-to-compensation-for-gdpr-infringements-causing-nonmaterial-damage\">Jones Day on C-300/21</a>, <a href=\"https://curia.europa.eu/site/upload/docs/application/pdf/2024-10/cp240159en.pdf\">EU Court on C-21/23</a>, <a href=\"https://www.taylorwessing.com/en/insights-and-events/insights/2025/03/bgh-lindenapotheke\">BGH 2025</a>"
+  },
+  "checks": {
+    "title": "How checks work",
+    "lead": "Nobody checks in advance. A regulator learns about you in one of three ways. [data https://rgpd.com/gdpr/chapter-8-remedies-liability-and-penalties/article-77-right-to-lodge-a-complaint-with-a-supervisory-authority]",
+    "inputs": [
+      "<b>A person’s complaint</b>Art. 77, free, to the regulator where they live, work or where the breach happened. They don’t need to prove the breach first.",
+      "<b>Your own breach notice</b>Knuddels reported a hack itself; the investigation found passwords stored in plain text.",
+      "<b>The regulator’s own initiative</b>Coordinated EDPB actions; the 2026 topic is transparency and information."
+    ],
+    "flow": [
+      "<b>Request</b>a letter with questions",
+      "<b>Response</b>documents and explanations",
+      "<b>Decision</b>order, reprimand or fine",
+      "<b>Court</b>appeal against the decision"
+    ],
+    "parallel": "<b>In parallel:</b> a person can sue the company straight away (Art. 79, 82) without waiting for the regulator. If the regulator says nothing about a complaint for 3 months, you can sue the regulator itself (Art. 78). NGOs like noyb file complaints on people’s behalf (Art. 80).",
+    "note": "From 2 April 2027 cross-border cases get binding deadlines (Regulation 2025/2518).",
+    "sources": "<a href=\"https://rgpd.com/gdpr/chapter-8-remedies-liability-and-penalties/article-77-right-to-lodge-a-complaint-with-a-supervisory-authority\">Art. 77</a>, <a href=\"https://digitalhorizon.hannessnellman.com/digital-privacy/gdpr/chapter-viii-remedies-liability-and-penalties/\">Art. 78–80</a>, <a href=\"https://www.jdsupra.com/legalnews/germany-announces-that-it-is-not-33034\">Knuddels</a>, <a href=\"https://cms.law/en/int/publication/GDPR-Enforcement-Tracker-Report/executive-summary\">CMS</a>, <a href=\"https://www.matheson.com/insights/new-era-for-cross-border-gdpr-enforcement-what-the-gdpr-procedural-regulation-means-in-practice/\">Matheson</a>"
+  },
+  "cases": {
+    "title": "Modest fines [data https://www.enforcementtracker.com/ETid-1]",
+    "items": [
+      "<b>Austria, 2018.</b> A betting shop filmed the pavement and car park and put up no CCTV sign.",
+      "<b>Germany, 2018.</b> The Knuddels chat stored passwords in plain text. According to the regulator, data of about 330,000 users was stolen; other sources give higher numbers. The amount was reduced for quick cooperation.",
+      "<b>Germany, 2019, a private person.</b> An email where all recipients saw each other’s addresses.",
+      "<b>Private persons.</b> At least 65 fines by October 2022, mostly for cameras at home and other people’s photos on social media."
+    ]
+  },
+  "who": {
+    "title": "Who gets fined and for what [inference https://cms.law/en/int/publication/GDPR-Enforcement-Tracker-Report/executive-summary]",
+    "small": "<b>Small businesses and private persons</b>Hundreds to tens of thousands of euros. Cameras, mailings without consent, a letter to the wrong recipient, no information for people, weak security exposed after a breach.",
+    "big": "<b>Big Tech</b>Hundreds of millions of euros. Data transfers out of the EU, advertising without a legal basis, children’s data."
+  },
+  "stats": {
+    "title": "CMS statistics as of 1 March 2026 [data https://cms.law/en/deu/publication/GDPR-Enforcement-Tracker-Report/numbers-and-figures]",
+    "items": [
+      "fines with complete data",
+      "of them published by Spain",
+      "average fine, heavily skewed by the largest ones"
+    ],
+    "averageFine": "€2.28M",
+    "note": "The most common reason is processing without a legal basis. Retail and telecoms lead by number of fines. The statistics are incomplete: some countries publish fines of a few hundred euros, others only large ones."
+  },
+  "skills": {
+    "title": "Check your product against this page with a single sentence to your AI agent",
+    "lead": "Three open skills read your code, trace every personal-data flow down to the file and line, decide which laws apply and bring ready fixes. They send, delete and commit nothing without your “yes”.",
+    "github": "Open on GitHub",
+    "install": "Install",
+    "copy": "Copy",
+    "note": "Works with Claude Code, Codex, Gemini CLI, GitHub Copilot and Cursor. In Claude.ai, upload each folder from <code>skills/</code> in the skills section of settings. MIT license.",
+    "chat": {
+      "label": "The AI agent’s answer with the skills",
+      "question": "Check journal-app for GDPR and nFADP, it’s already live.",
+      "answer": [
+        "<b>Possible incident.</b> Journal entries and photos are open to outsiders. Close access first (fix #1), then check the logs.",
+        "<b>Checked:</b> 21 files from git, static only.",
+        "<b>Laws:</b> nFADP and GDPR Art. 3(2)(a): sign-up offers Switzerland and Germany <i>[code: signup/page.tsx:34]</i> <i>[inference]</i>.",
+        "<b>Top findings:</b>",
+        "Apply fix #1?"
+      ],
+      "findings": [
+        "<b>Blocker.</b> Table <code>ai_reflections</code> has no RLS <i>[code: init.sql:42]</i>",
+        "<b>Blocker.</b> Any signed-in user reads other people’s entries <i>[code: init.sql:33]</i>",
+        "<b>Blocker.</b> The photo bucket is public <i>[code: storage.sql:2]</i>"
+      ],
+      "caption": "Based on a blind-test answer, shortened. The full report with tables and patches goes into a private document."
+    },
+    "pipeline": {
+      "label": "How the skills work together",
+      "you": {
+        "title": "You write",
+        "text": "“check the project for GDPR”"
+      },
+      "director": "understands the request, owns the severity scale and safety rules",
+      "audit": "finds the data in the code",
+      "jurisdictions": "works out the laws",
+      "report": {
+        "title": "Report",
+        "text": "a summary in chat, the full report in a document, patches one by one"
+      }
+    },
+    "proof": [
+      {
+        "value": "12",
+        "text": "problem types it hunts for, from tracking before consent to secrets in git history"
+      },
+      {
+        "value": "9",
+        "text": "scenarios, from a code audit to a data leak or a deletion request"
+      },
+      {
+        "value": "11",
+        "text": "jurisdictions with links to the official texts; other countries via the regulators’ register"
+      },
+      {
+        "value": "file:line",
+        "text": "on every finding, with a ready patch for blockers"
+      }
+    ],
+    "fine": "How the skills were tested on test repositories: see the <a href=\"https://github.com/stevedevhere/privacy-for-builders#testing\">README</a>. The skills give findings and drafts; the decision stays with you.",
+    "copied": "Copied",
+    "copyFailed": "Select and copy"
+  },
+  "footer": {
+    "sources": "All sources on this page ({count})",
+    "sourcesNote": "Every “data” and “inference” badge on the page links to its own source. They are all collected here.",
+    "disclaimer": "An explanation of the law, not a lawyer’s advice on a specific case. Prices come from providers’ pages and may differ for your case."
+  }
+}

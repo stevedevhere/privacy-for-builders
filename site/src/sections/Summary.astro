@@ -1,0 +1,53 @@
+---
+import { langOf, useText } from '../i18n';
+import { countByClass, loadLaws } from '../data/laws';
+import Tile from '../components/Tile.astro';
+
+/** Overview cards, one per tab, each ending with a link to that tab. */
+const lang = langOf(Astro.url);
+const { t, get, html } = useText(lang);
+const list = (path: Parameters<typeof get>[0]) => get<string[]>(path).map(html);
+// country counts come from the map data, so the card and the map never disagree
+const counts = countByClass(loadLaws(lang));
+const lawItems = list('summary.laws.items').map((item) => item.replace(/\{(\w)\}/g, (_, c: string) => String(counts[c] ?? 0)));
+---
+<Tile span={7} id="sum-data" class="sum" title={t('summary.data.title')}>
+  <p set:html={t('summary.data.text')} />
+  <a class="more-link" href="#data">{get('summary.data.link')}</a>
+</Tile>
+<Tile span={5} id="sum-start" class="sum" title={t('summary.start.title')}>
+  <ol class="mini">{list('summary.start.items').map((item) => <li set:html={item} />)}</ol>
+  <a class="more-link" href="#start">{get('summary.start.link')}</a>
+</Tile>
+<Tile span={4} id="sum-laws" class="sum" title={t('summary.laws.title')}>
+  <ul class="kv">{lawItems.map((item) => <li set:html={item} />)}</ul>
+  <a class="more-link" href="#laws">{get('summary.laws.link')}</a>
+</Tile>
+<Tile span={4} id="sum-money" class="sum" title={t('summary.money.title')}>
+  <ul class="kv">{list('summary.money.items').map((item) => <li set:html={item} />)}</ul>
+  <a class="more-link" href="#money">{get('summary.money.link')}</a>
+</Tile>
+<Tile span={4} id="sum-tools" class="sum night wide-on-tablet" title={t('summary.tools.title')}>
+  <p set:html={t('summary.tools.text')} />
+  <a class="more-link" href="#tools">{get('summary.tools.link')}</a>
+</Tile>
+
+<style is:global>
+  .sum{display:flex;flex-direction:column;gap:8px}
+  .sum p{margin:0}
+  .more-link{margin-top:auto;padding-top:6px;font-weight:600;font-size:.88rem;color:var(--accent);text-decoration:none}
+  .more-link:hover{text-decoration:underline}
+  .mini{margin:0;padding-left:1.2rem;font-size:.9rem}
+  .mini li{margin:.3rem 0}
+  .kv{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .kv li{margin:0;font-size:.86rem;color:var(--ink-2)}
+  .kv b{display:block;font:600 1.3rem/1.15 var(--display);color:var(--ink)}
+  .night{background:var(--night);color:#EEF1F5;border-color:var(--night-rule)}
+  .sum.night p{color:#C3CADA}
+  .sum.night .more-link{color:#FFE15C}
+  /* full width on a tablet: text on the left, the link on the right */
+  @media (max-width:1000px) and (min-width:701px){
+    .sum.wide-on-tablet{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:32px;align-items:end}
+    .sum.wide-on-tablet>h3{grid-column:1/-1}
+  }
+</style>

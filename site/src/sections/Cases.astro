@@ -1,0 +1,27 @@
+---
+import { langOf, useText } from '../i18n';
+import Tile from '../components/Tile.astro';
+
+const lang = langOf(Astro.url);
+const { t, get, html } = useText(lang);
+const euros = (n: number) => new Intl.NumberFormat(lang, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
+/** Fine amounts, in the order of the case texts. The last one is a range. */
+const AMOUNTS = [euros(4800), euros(20000), euros(2500), `${euros(100)}–${euros(6000)}`];
+const SOURCES = [
+  ['Enforcement Tracker', 'https://www.enforcementtracker.com/ETid-1'],
+  ['JD Supra', 'https://www.jdsupra.com/legalnews/germany-announces-that-it-is-not-33034'],
+  ['Privacy Affairs, 12.10.2022', 'https://www.privacyaffairs.com/private-individuals-gdpr/'],
+];
+---
+<Tile span={5} id="cases" title={t('cases.title')} class="wide-on-tablet">
+  {get<string[]>('cases.items').map((text, i) => (
+    <div class="case"><span class="big">{AMOUNTS[i]}</span><span set:html={html(text)} /></div>
+  ))}
+  <p class="src">{SOURCES.map(([name, url], i) => <>{i > 0 && ', '}<a href={url}>{name}</a></>)}</p>
+</Tile>
+
+<style is:global>
+  .case{display:grid;grid-template-columns:7.6em 1fr;gap:12px;align-items:baseline;padding:8px 0;border-top:1px solid var(--rule);font-size:.9rem}
+  .case:first-of-type{border-top:none}
+  .case .big{font-size:1.05rem;white-space:normal}
+</style>

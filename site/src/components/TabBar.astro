@@ -1,0 +1,16 @@
+---
+import { langOf, useText } from '../i18n';
+import { PANELS } from '../data/panels';
+const { get } = useText(langOf(Astro.url));
+---
+<nav class="tabs" role="tablist" aria-label={get('tabs.label')}>
+  {PANELS.map((id) => <a role="tab" id={`tab-${id}`} href={`#${id}`} aria-controls={id}>{get(`tabs.${id}`)}</a>)}
+</nav>
+
+<style is:global>
+  .tabs{position:sticky;top:0;z-index:5;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:8px 0;background:var(--paper);border-bottom:1px solid var(--rule)}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs a{flex:none;font-size:.88rem;text-decoration:none;color:var(--ink-2);padding:8px 14px;border-radius:999px}
+  .tabs a:hover{color:var(--ink);background:var(--sheet)}
+  .tabs a[aria-selected="true"]{color:var(--paper);background:var(--ink)}
+</style>

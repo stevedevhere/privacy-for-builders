@@ -1,0 +1,11 @@
+---
+import { langOf, useText } from '../i18n';
+import Tile from '../components/Tile.astro';
+import Verdicts from '../components/Verdicts.astro';
+
+const { t, get } = useText(langOf(Astro.url));
+---
+<Tile span={4} id="risks" title={t('risks.title')} class="pairs-on-tablet">
+  <Verdicts items={get('risks.verdicts')} tones={['no', 'no', 'mid', 'mid']} />
+  <p class="src" set:html={t('risks.sources')} />
+</Tile>

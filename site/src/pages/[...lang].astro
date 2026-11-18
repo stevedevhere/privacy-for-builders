@@ -1,0 +1,34 @@
+---
+import { LANGS, LANG_META } from '../i18n';
+import Page from '../layouts/Page.astro';
+import Panel from '../components/Panel.astro';
+import Hero from '../sections/Hero.astro';
+import Badge from '../sections/Badge.astro';
+import Summary from '../sections/Summary.astro';
+import Categories from '../sections/Categories.astro';
+import Example from '../sections/Example.astro';
+import Stages from '../sections/Stages.astro';
+import LawsMap from '../sections/LawsMap.astro';
+import OutsideEu from '../sections/OutsideEu.astro';
+import Representative from '../sections/Representative.astro';
+import Prices from '../sections/Prices.astro';
+import Risks from '../sections/Risks.astro';
+import Checks from '../sections/Checks.astro';
+import Cases from '../sections/Cases.astro';
+import Who from '../sections/Who.astro';
+import Stats from '../sections/Stats.astro';
+import Skills from '../sections/Skills.astro';
+
+// index.html is English; the others are fr.html, uk.html, ru.html
+export function getStaticPaths() {
+  return LANGS.map((lang) => ({ params: { lang: LANG_META[lang].path || undefined } }));
+}
+---
+<Page>
+  <Panel id="main"><Hero /><Badge /><Summary /></Panel>
+  <Panel id="data"><Categories /><Example /></Panel>
+  <Panel id="start"><Stages /></Panel>
+  <Panel id="laws"><LawsMap /><OutsideEu /><Representative /></Panel>
+  <Panel id="money"><Prices /><Risks /><Checks /><Cases /><Who /><Stats /></Panel>
+  <Panel id="tools"><Skills /></Panel>
+</Page>

@@ -1,0 +1,12 @@
+---
+import { langOf, useText } from '../i18n';
+const { get } = useText(langOf(Astro.url));
+const THEMES = ['auto', 'light', 'dark'] as const;
+---
+<div class="seg" role="radiogroup" aria-label={get('header.theme.label')}>
+  {THEMES.map((theme) => (
+    <button type="button" role="radio" data-theme-choice={theme} aria-checked={theme === 'auto' ? 'true' : 'false'}>
+      {get(`header.theme.${theme}`)}
+    </button>
+  ))}
+</div>
